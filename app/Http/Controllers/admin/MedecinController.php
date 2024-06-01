@@ -19,8 +19,10 @@ class MedecinController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
+
     {
         $query = User::where('role', 'medecin');
+        $users = User::all();
 
         if ($request->has('search')) {
             $query->where(function($q) use ($request) {

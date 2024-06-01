@@ -25,7 +25,7 @@
 					<div class="invoice-logo-content">
 
 						<div class="invoice-logo">
-						    <img src="{{asset('logo/PdfSideBare.png')}}" alt="this is a invoice logo" style="margin-right: 5%" width="107%">
+						    <img src="{{asset('logo/PdfSideBare.png')}}" alt="this is a invoice logo" style="margin-right: 20%" width="100%">
                          </div>
 					</div>
 					<div class="invoice-header-contact">

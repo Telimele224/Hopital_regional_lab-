@@ -12,7 +12,7 @@
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 small">Mettez à jour les informations de profil et l'adresse e-mail de votre compte.</p>
             </div>
         </div>
-        <div class="card-body">
+        <div class=" p-4 card-body">
             <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
                 @csrf
                 @method('patch')

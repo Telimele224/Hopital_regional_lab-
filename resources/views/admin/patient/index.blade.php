@@ -11,11 +11,11 @@
                              <!-- Formulaire de recherche -->
                              <form action="{{ route('admin.patient.index') }}" method="GET" class="mb-3">
                                 <div class="input-group row">
-                                    <div class="col-md-10">
-                                        <input type="text" id="search" name="search" class="form-control" placeholder="Rechercher par  telephone ou nom_prenom " autocomplete="on" value="{{ request('search') }}">
-                                    </div>
-
-                                    <div class="col-md-1">
+                                    <input type="text"  id="search" name="search" class="form-control rounded-4" placeholder="Recherche" autocomplete="on" value="{{ request('search') }}">
+                                    {{-- <div class="col-md-10">
+                                        <input type="text"   id="search" name="search" class="form-control rounded-2" placeholder="Rechercher par  telephone ou nom_prenom " autocomplete="on" value="{{ request('search') }}">
+                                    </div> --}}
+                                    <div class=" btn incon col-md-1">
                                         <button type="submit" class="btn btn-primary text-end"><i class="bi bi-search text-muted"></i></button>
                                     </div>
                                 </div>
@@ -38,13 +38,13 @@
     <div class="tab-content mb-5">
         <div class="tab-pane active show" id="tab-11" role="tabpanel">
             <div class="card">
-                <div class="card-header border-bottom-0 px-5">
-                    {{-- /<a href="{{ route('export') }}" class="btn btn-primary"><i class="ion ion-printer"></i> Imprimer</a> --}}
+                {{-- <div class="card-header border-bottom-0 px-5">
+                    /<a href="{{ route('export') }}" class="btn btn-primary"><i class="ion ion-printer"></i> Imprimer</a>
                     <h2 class="card-title"> </h2>
                     <div class="page-options ms-auto">
                         <a href="{{ route('admin.patientpdf.index') }}" class="btn btn-primary"><i class="bi bi-arrow-down-circle"></i>&nbsp;&nbsp;&nbsp; Impression | Pdf | Excel</a>
                     </div>
-                </div>
+                </div> --}}
                 <div class="e-table px-5 pb-5">
                     <div class="table-responsive table-lg">
                         <table class="table border-top table-bordered mb-0 text-nowrap">

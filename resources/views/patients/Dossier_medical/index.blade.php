@@ -7,9 +7,9 @@
         <div class="card">
             <div class="card-header border-bottom-0 px-5">
                 <h2 class="card-title"></h2>
-                <div class="page-options ms-auto">
+                {{-- <div class="page-options ms-auto">
                     <a href="http://127.0.0.1:8000/admin/medecinpdf" class="btn btn-primary"><i class="bi bi-arrow-down-circle"></i>&nbsp;&nbsp;&nbsp; Impression | Pdf | Excel</a>
-                </div>
+                </div> --}}
             </div>
             <div class="e-table px-5 pb-5">
                 <div class="table-responsive table-lg">
@@ -46,7 +46,6 @@
                                             <span class="avatar rounded-circle bg-info">
                                                 <a href="{{ route('patientpdf.ordonanceShow',$consultation ) }}" class="text-decoration-none text-default"><i class="fa fa-file-pdf-o fs-15 text-white "></i></a>
                                             </span>
-
                                         </div>
                                     </td>
                                 </tr>

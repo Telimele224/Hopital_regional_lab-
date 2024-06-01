@@ -133,6 +133,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('maladies',MaladieController::class);
     Route::resource('maux',MalController::class);
     Route::resource('calendriers',CalendrierController::class);
+    Route::resource('medecinListpdf',MedecinListeController::class);
 
  Route::get('medecins/{medecin}', [MedecinController::class, 'show'])->name('medecins.show');
     // Route::ressource('administrateur',AdminController::class)->except('show');

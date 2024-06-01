@@ -7,9 +7,9 @@
             <div class="card-body">
                 <div class="d-flex align-items-start">
                     <div class="flex-grow-1">
-                        <p class="mb-0 text-gray-600">Total Orders</p>
-                        <span class="fs-5">45</span>
-                        <span class="fs-12 text-success ms-1"><i class="ti ti-trending-up mx-1"></i>0.5%</span>
+                        <p class="mb-0 text-gray-600">Total</p>
+                        <span class="fs-5">{{$rendezVousMedecin->count()}}</span>
+                        <span class="fs-12 text-success ms-1"> <i class="fe fe-align-inset-inline-end fs-18"></i>
                     </div>
                     <div class="min-w-fit-content ms-3">
                         <span class="avatar avatar-md br-5 bg-primary-transparent text-primary">
@@ -25,12 +25,12 @@
             <div class="card-body">
                 <div class="d-flex align-items-start">
                     <div class="flex-grow-1">
-                        <p class="mb-0 text-gray-600">Total Package</p>
-                        <span class="fs-5">10</span>
-                        <span class="fs-12 text-secondary ms-1"><i class="ti ti-trending-down mx-1"></i>8.0%</span>
+                        <p class="mb-0 text-gray-600"> Acceptés</p>
+                        <span class="fs-5">{{$rendezVousAcceptesMedecin->count()}}</span>
+                        <span class="fs-12 text-primary ms-1"> <i class="fe fe-check-circle"></i></span>
                     </div>
                     <div class="min-w-fit-content ms-3">
-                        <span class="avatar avatar-md br-5 bg-secondary-transparent text-secondary">
+                        <span class="avatar avatar-md br-5 bg-primary-transparent text-primary">
                             <i class="fe fe-package fs-18"></i>
                         </span>
                     </div>
@@ -43,13 +43,13 @@
             <div class="card-body">
                 <div class="d-flex align-items-start">
                     <div class="flex-grow-1">
-                        <p class="mb-0 text-gray-600">Total Payments</p>
-                        <span class="fs-5">$60.00</span>
-                        <span class="fs-12 text-success ms-1"><i class="ti ti-trending-up mx-1"></i>3.5%</span>
+                        <p class="mb-0 text-gray-600"> Annulés</p>
+                        <span class="fs-5">{{$rendezVousRejettesMedecin->count()}}</span>
+                        <span class="fs-12 text-secondary ms-1"><i class="ti ti-trending-up mx-1"></i></span>
                     </div>
                     <div class="min-w-fit-content ms-3">
-                        <span class="avatar avatar-md br-5 bg-warning-transparent text-warning">
-                            <i class="fe fe-credit-card fs-18"></i>
+                        <span class="avatar avatar-md br-5 bg-secondary-transparent text-secondary">
+                            <i class="fe fe-arrow-up-inset-inline-end"></i>
                         </span>
                     </div>
                 </div>
@@ -61,13 +61,15 @@
             <div class="card-body">
                 <div class="d-flex align-items-start">
                     <div class="flex-grow-1">
-                        <p class="mb-0 text-gray-600">Total Subscriptions </p>
-                        <span class="fs-5">10</span>
-                        <span class="fs-12 text-success ms-1"><i class="ti ti-trending-up mx-1"></i>0.5%</span>
+                        <p class="mb-0 text-warning-600"> En Attente </p>
+                        <span class="fs-5">{{$rendezVousEnAttenteMedecin->count()}}</span>
+                        <span class="fs-12 text-warning ms-1">
+                            <i class="mdi mdi-account-convert mx-1"></i>
+                        </span>
                     </div>
                     <div class="min-w-fit-content ms-3">
-                        <span class="avatar avatar-md br-5 bg-info-transparent">
-                            <i class="fe fe-user-plus fs-18"></i>
+                        <span class="avatar avatar-md br-5 bg-info-warning">
+                            <i class="mdi mdi-account-convert fs-18"></i>
                         </span>
                     </div>
                 </div>
@@ -79,9 +81,9 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div class="flex-fill">
-                        <p class="mb-1 fs-5 fw-semibold text-default">1,773</p>
-                        <p class="mb-0 text-muted">Membre Actifs</p>
-                        <p class="mb-0 fs-11"><a href="javascript:void(0);" class="text-success text-decoration-underline">Voir tous</a></p>
+                        <p class="mb-1 fs-5 fw-semibold text-default">{{$medecincountMedecin->count()}}</p>
+                        <p class="mb-0 text-muted">Les Medecins</p>
+                        <p class="mb-0 fs-11"><a href="{{route('medecins.monequipe.index')}}" class="text-success text-decoration-underline">Voir tous</a></p>
                     </div>
                     <div class="ms-2">
                         <span class="avatar text-bg-info rounded-circle fs-20"><i class="bi bi-people-fill"></i></span>
@@ -91,20 +93,12 @@
         </div>
         <div class="card text-center">
             <div class="card-body">
-                <div class="avatar bg-secondary-transparent rounded-circle fs-20 mb-3">
-                    <i class="bi bi-file-earmark-text  project  mx-auto text-secondary "></i>
-                </div>
-                <h6 class="mb-1 text-muted">Consultation Enregistré</h6>
-                <h3 class="fw-semibold">116</h3>
-            </div>
-        </div>
-        <div class="card text-center">
-            <div class="card-body">
                 <div class="avatar bg-primary-transparent rounded-circle fs-20 mb-3">
-                    <i class="fa fa-credit-card-alt project  mx-auto text-primary "></i>
+                    <img src="{{asset('storage/'.Auth::user()->photo)}}" class="rounded-circle"  style="height: 50px; width:70px"  alt="profile">
+                    {{-- <i class="bi bi-file-earmark-text  project  mx-auto text-secondary "></i> --}}
                 </div>
-                <h6 class="mb-1 text-muted">Total Profit</h6>
-                <h3 class="fw-semibold">2.345.000 <span class="small text-secondary">GNF</span></h3>
+                <h6 class="mb-1 text-muted">{{ Auth::user()->name }} </h6>
+                <p class="mb-0 fs-11"><a href="{{route('profilee.edit')}}" class="text-success text-decoration-underline">Mon Profile</a></p>
             </div>
         </div>
     </div>
@@ -113,7 +107,7 @@
             <div class="card-body">
                 <div class="d-flex">
                     <div class="tx-fixed-white">
-                        <h2 class="mb-0 number-font">7,865</h2>
+                        <h2 class="mb-0 number-font">{{$patientCountMedecin->count()}}</h2>
                         <p class="mb-0">Total Patients </p>
                     </div>
                     <div class="ms-auto tx-fixed-white"> <i class="fa fa-user-o fs-30 me-2 mt-2"></i> </div>
@@ -124,7 +118,7 @@
             <div class="card-body">
                 <div class="d-flex">
                     <div class="tx-fixed-white">
-                        <h2 class="mb-0 number-font">86,964</h2>
+                        <h2 class="mb-0 number-font">{{$consultationsCount}}</h2>
                         <p class="mb-0">Total Consultations</p>
                     </div>
                     <div class="ms-auto tx-fixed-white"> <i class="wi wi-earthquake fs-30 ms-2 mt-2"></i> </div>
@@ -135,21 +129,10 @@
             <div class="card-body">
                 <div class="d-flex">
                     <div class="tx-fixed-white">
-                        <h2 class="mb-0 number-font">98</h2>
-                        <p class=" mb-0">Total Comments</p>
+                        <h2 class="mb-0 number-font">{{$personnelcount->count()}}</h2>
+                        <p class=" mb-0">Total Personnels</p>
                     </div>
-                    <div class="ms-auto tx-fixed-white"> <i class="fa fa-comment-o  fs-30 me-2 mt-2"></i> </div>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-info img-card box-info-shadow">
-            <div class="card-body">
-                <div class="d-flex">
-                    <div class="tx-fixed-white">
-                        <h2 class="mb-0 number-font">893</h2>
-                        <p class=" mb-0">Total Posts</p>
-                    </div>
-                    <div class="ms-auto tx-fixed-white"> <i class="fa fa-envelope-o fs-30 me-2 mt-2"></i> </div>
+                    <div class="ms-auto tx-fixed-white"> <i class="fa fa-user-o fs-30 me-2 mt-2"></i> </div>
                 </div>
             </div>
         </div>

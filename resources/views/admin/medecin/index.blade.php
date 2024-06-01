@@ -10,11 +10,12 @@
                         <div class="input-group">
                              <!-- Formulaire de recherche -->
                              <form action="{{ route('admin.medecin.index') }}" method="GET" class="mb-3">
+                                {{-- <div class=" col-md-4">
+                                    <label for="input-search" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Type de recherche</font></font></label>
+                                    <input type="search" id="search" name="search" class="form-control" id="input-search" placeholder="Recherche" value="{{ request('search') }}">
+                                </div> --}}
                                 <div class="input-group row">
-                                    <div class="col-md-6">
-                                        <input type="text" id="search" name="search" class="form-control" placeholder="Rechercher un medecin par son nom ou prenom" value="{{ request('search') }}">
-                                    </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-7">
                                         <select name="service" class="form-select">
                                             <option value="">tous les medecins</option>
                                             @foreach($services as $service)
@@ -24,7 +25,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-1">
+                                    <div class="col-xl-2">
                                         <button type="submit" class="btn btn-primary text-end"><i class="bi bi-search text-muted"></i></button>
                                     </div>
                                 </div>
@@ -32,12 +33,12 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-4 col-md-4 col-sm-4">
+                    <div class="col-md-4">
                         <ul class="nav item2-gl-menu float-end my-2" role="tablist">
                             <li class="border-end"><a href="#tab-11" class="show active" data-bs-toggle="tab" title="List style" aria-selected="true" role="tab"><i class="fa fa-list"></i></a></li>
                             <li><a href="#tab-12" data-bs-toggle="tab" class="" title="Grid" aria-selected="false" role="tab" tabindex="-1"><i class="fa fa-th"></i></a></li>
                             <ol class="breadcrumbn gap-3 ml-3">
-                                <li class="breadcrumb-item"><span><a href="{{ route('admin.medecin.create') }}" class="btn btn-primary"><i class="fe fe-plus"></i> Ajouter | medecin</a></span></li>
+                                <li class="breadcrumb-item"><span><a href="{{ route('admin.medecin.create') }}" class="btn btn-primary"><i class="fe fe-plus"></i>Enregistrer</a></span></li>
                             </ol>
                         </ul>
                     </div>
@@ -49,10 +50,9 @@
         <div class="tab-pane active show" id="tab-11" role="tabpanel">
             <div class="card">
                 <div class="card-header border-bottom-0 px-5">
-                    {{-- /<a href="{{ route('export') }}" class="btn btn-primary"><i class="ion ion-printer"></i> Imprimer</a> --}}
                     <h2 class="card-title"> </h2>
                     <div class="page-options ms-auto">
-                        <a href="{{ route('admin.medecinpdf.index') }}" class="btn btn-primary"><i class="bi bi-arrow-down-circle"></i>&nbsp;&nbsp;&nbsp; Impression | Pdf | Excel</a>
+                        <a href="{{ route('admin.medecinpdf.index') }}" class="btn btn-primary"><i class="ion ion-printer"></i>&nbsp;&nbsp;&nbsp; Impression</a>
                     </div>
                 </div>
                 <div class="e-table px-5 pb-5">
@@ -90,8 +90,8 @@
                                     <td class="align-middle">
                                         <div class="btn-list">
                                             @if($user->medecin)
-                                                <button class="btn btn-sm btn-icon btn-info-light rounded-circle" data-target="#user-form-modal" data-bs-toggle="" type="button"><i class="bi bi-pencil-square"></i></button>
-                                                <button class="btn btn-sm btn-icon btn-secondary-light rounded-circle" type="button"><a href="{{ route('admin.administrateur.edit', $user->medecin) }}"><i class="bi bi-trash"></i></a></button>
+                                                {{-- <button class="btn btn-sm btn-icon btn-info-light rounded-circle" data-target="#user-form-modal" data-bs-toggle="" type="button">  <a href="{{route('admin.medecinListpdf.show',$user->medecin)}}"><i class="fa fa-file-pdf-o"></i></a> </button> --}}
+                                                <button class="btn btn-sm btn-icon btn-secondary-light rounded-circle" type="button"><a href="{{ route('admin.administrateur.edit', $user->medecin) }}"><i class="fa fa-eye-slash"></i></a></button>
                                             @endif
                                         </div>
                                     </td>

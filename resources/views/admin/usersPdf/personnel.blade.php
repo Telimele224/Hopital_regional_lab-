@@ -13,7 +13,6 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('pdfassets/css/custom.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('pdfassets/css/media-query.css')}}">
     <link href="{{asset('assets/build/assets/iconfonts/icons.css')}}" rel="stylesheet">
-    <link rel="icon" href="{{asset(logo/LogoHRL.png)}}">
 
 </head>
 <body>
@@ -26,9 +25,8 @@
 					<div class="invoice-logo-content">
 
 						<div class="invoice-logo">
-							<a href="hotel_booking.html" class="logo"><img src="{{asset('Image/Logo HRL.png')}}" alt="this is a invoice logo"></a>
-                        </div>
-						
+						    <img src="{{asset('logo/PdfSideBare.png')}}" alt="this is a invoice logo" style="margin-right: 20%" width="100%">
+                         </div>
 					</div>
 					<div class="invoice-header-contact">
 						<div class="invo-cont-wrap invo-contact-wrap">
@@ -57,51 +55,32 @@
 						<div class="invoice-owner-conte-wrap">
 							<div class="invo-to-wrap">
 								<div class="invoice-to-content">
-									<p class="invo-to inter-700 medium-font mtb-0">Guest Info:</p>
-									<h1 class="invo-to-owner inter-700 md-lg-font">Jordon Smith</h1>
-									<p class="invo-owner-address medium-font inter-400 mtb-0">Phone: +1 562 563 8899 <br> Email: jordon123@mail.com</p>
-								</div>
-							</div>
-							<div class="invo-pay-to-wrap">
-								<div class="invoice-pay-content">
-									<p class="invo-to inter-700 medium-font mtb-0">Hotel Details:</p>
-									<h2 class="invo-to-owner inter-700 md-lg-font">Digital Invoico Star Hotel</h2>
-									<p class="invo-owner-address medium-font inter-400 mtb-0">4510 E Dolphine St, IN 3526<br> Hills Road, New York, USA</p>
+									<p class="invo-to inter-700 medium-font mtb-0">LISTE DU PERSONNEL:</p>
 								</div>
 							</div>
 						</div>
 						<!--invoice owner name end here -->
 
 						<!--Booking Information start here -->
-						<div class="invo-hotel-book-wrap">
-							<div class="booking-content-wrap">
-								<div class="invo-book-detail detail-col">
-									<span class="invo-hotel-title book-id inter-700 b-text">Booking ID:</span>
-									<span class="invo-hotel-desc inter-400 second-color">DIH56321</span>
-								</div>
-								<div class="invo-book-detail detail-col">
-									<span class="invo-hotel-title check-in inter-700 b-text">Check In:</span>
-									<span class="invo-hotel-desc second-color">30/11/2022</span>
-								</div>
-								<div class="invo-book-detail detail-col">
-									<span class="invo-hotel-title nights inter-700 b-text">Nights:</span>
-									<span class="invo-hotel-desc second-color">3</span>
-								</div>
-							</div>
-							<div class="booking-content-wrap second-row">
-								<div class="invo-book-detail detail-col">
-									<span class="invo-hotel-title book-id inter-700 b-text">Room No:</span>
-									<span class="invo-hotel-desc inter-400 second-color">101</span>
-								</div>
-								<div class="invo-book-detail detail-col">
-									<span class="invo-hotel-title check-in inter-700 b-text">Check Out:</span>
-									<span class="invo-hotel-desc second-color">02/12/2022</span>
-								</div>
-								<div class="invo-book-detail detail-col">
-									<span class="invo-hotel-title nights inter-700 b-text">Room Type:</span>
-									<span class="invo-hotel-desc second-color">Delux</span>
-								</div>
-							</div>
+						<div class="invo-hotel-book-wrap ">
+                            @foreach ($personnels as $k => $personnel)
+
+                                    <div class="booking-content-wrap">
+                                        <div class="invo-book-detail detail-col">
+                                            <span class="invo-hotel-title book-id inter-700 b-text">Nom:</span> <br>
+                                            <span class="invo-hotel-desc inter-400 second-color">{{ $personnel->nom }}</span>
+                                        </div>
+                                        <div class="invo-book-detail detail-col">
+                                            <span class="invo-hotel-title check-in inter-700 b-text">Prénom:</span> <br>
+                                            <span class="invo-hotel-desc second-color">{{ $personnel->prenom }}</span>
+                                        </div>
+                                        <div class="invo-book-detail detail-col">
+                                            <span class="invo-hotel-title nights inter-700 b-text">Poset:</span> <br>
+                                            <span class="invo-hotel-desc second-color">{{ $personnel->poste }}</span>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-bottom: 4px">
+                            @endforeach
 						</div>
 
 					</div>
@@ -121,11 +100,6 @@
                         <div class="invo-down-btn invo-btns">
                             <a class="download-btn" id="generatePDF"  href="{{route('adminpfd.pdf')}}">
                                 <span class="fa fa-file-pdf-o">&nbsp;&nbsp;&nbsp;Pdf</span>
-                            </a>
-                        </div>
-                        <div class="invo-down-btn invo-btns">
-                            <a class="download-btn" id="generatePDF" href="{{route('export')}}">
-                                <span class="ion ion-printer">&nbsp;&nbsp;&nbsp; Excel</span>
                             </a>
                         </div>
 					</div>

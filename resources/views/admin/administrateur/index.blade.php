@@ -8,8 +8,14 @@
                     <div class="row align-items-center justify-content-around">
                         <div class="col-xl-5 col-lg-8 col-md-8 col-sm-8">
                             <div class="input-group">
-                                <!-- Formulaire de recherche -->
                                 <form action="{{ route('admin.administrateur.index') }}" method="GET" class="mb-3">
+                                    <div class="input-group has-validation">
+                                        <button class="input-group-text" type="submit"><span class="input-group-text" id="validationTooltipUsernamePrepend"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rechercher</font></font></span></button>
+                                        <input type="search"  id="search" name="search"  class="form-control rounded-2" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required=""  autocomplete="on" value="{{ request('search') }}">
+                                    </div>
+                                </form>
+                                <!-- Formulaire de recherche -->
+                                {{-- <form action="{{ route('admin.administrateur.index') }}" method="GET" class="mb-3">
                                     <div class="input-group row">
                                         <div class="col-md-10">
                                             <input type="text" id="search" name="search" class="form-control" placeholder="Rechercher par  telephone ou nom_prenom " autocomplete="on" value="{{ request('search') }}">
@@ -19,7 +25,7 @@
                                             <button type="submit" class="btn btn-primary text-end"><i class="bi bi-search text-muted"></i></button>
                                         </div>
                                     </div>
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-4 col-md-4 col-sm-4">
@@ -27,6 +33,7 @@
                                 <li class="border-end"><a href="#tab-11" class="show active" data-bs-toggle="tab" title="List style" aria-selected="true" role="tab"><i class="fa fa-list"></i></a></li>
                                 <li><a href="#tab-12" data-bs-toggle="tab" class="" title="Grid" aria-selected="false" role="tab" tabindex="-1"><i class="fa fa-th"></i></a></li>
                                 <ol class="breadcrumbn gap-3 ml-3 ">
+
                                     <li class="breadcrumb-item"><span><a href="{{route('admin.administrateur.create')}}" class="btn btn-primary"> <i class="fe fe-plus"></i>  Ajouter | administrateur</a></span></li>
                                 </ol>
                             </ul>
@@ -41,9 +48,9 @@
                     <div class="card-header border-bottom-0 px-5">
                         {{-- /<a href="{{ route('export') }}" class="btn btn-primary"><i class="ion ion-printer"></i> Imprimer</a> --}}
                         <h2 class="card-title"> </h2>
-                        <div class="page-options ms-auto">
+                        {{-- <div class="page-options ms-auto">
                             <a href="{{ route('admin.usersPdf.index') }}" class="btn btn-primary"><i class="bi bi-arrow-down-circle"></i>&nbsp;&nbsp;&nbsp; Impression | Pdf | Excel</a>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="e-table px-5 pb-5">
                         <div class="table-responsive table-lg">

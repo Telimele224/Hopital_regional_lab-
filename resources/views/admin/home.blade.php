@@ -12,10 +12,8 @@
             <div class="card-body">
                <div class="d-flex align-items-start">
                   <div class="flex-grow-1">
-                     <p class="mb-0">Total Orders</p>
-                     <span class="fs-5">45</span>
-                     <span class="fs-12 text-success ms-1"><i
-                        class="ti ti-trending-up mx-1"></i>0.5%</span>
+                     <p class="mb-0">ADMINISTRATEUR</p>
+                     <span class="fs-5">{{$administrateur->count()}}</span>
                   </div>
                   <div class="min-w-fit-content ms-3">
                      <span
@@ -32,15 +30,14 @@
             <div class="card-body">
                <div class="d-flex align-items-start">
                   <div class="flex-grow-1">
-                     <p class="mb-0">Total Package</p>
-                     <span class="fs-5">10</span>
-                     <span class="fs-12 text-secondary ms-1"><i
-                        class="ti ti-trending-down mx-1"></i>8.0%</span>
+                     <p class="mb-0">MEDECINS</p>
+                     <span class="fs-5">{{$medecincountMedecinAdmin->count()}}</span>
+
                   </div>
                   <div class="min-w-fit-content ms-3">
                      <span
                         class="avatar avatar-md br-5 bg-secondary-transparent text-secondary">
-                     <i class="fe fe-package fs-18"></i>
+                     <i class="bi bi-people-fill fs-18"></i>
                      </span>
                   </div>
                </div>
@@ -52,15 +49,14 @@
             <div class="card-body">
                <div class="d-flex align-items-start">
                   <div class="flex-grow-1">
-                     <p class="mb-0">Total Payments</p>
-                     <span class="fs-5">60</span>
-                     <span class="fs-12 text-success ms-1"><i
-                        class="ti ti-trending-up mx-1"></i>3.5%</span>
+                     <p class="mb-0">PERSONNELS</p>
+                     <span class="fs-5">{{$personnelcountAdmin->count()}}</span>
+
                   </div>
                   <div class="min-w-fit-content ms-3">
                      <span
                         class="avatar avatar-md br-5 bg-warning-transparent text-warning">
-                     <i class="fe fe-credit-card fs-18"></i>
+                     <i class="bi bi-people-fill  fs-18"></i>
                      </span>
                   </div>
                </div>
@@ -72,10 +68,8 @@
             <div class="card-body">
                <div class="d-flex align-items-start flex-wrap gap-1">
                   <div class="flex-grow-1">
-                     <p class="mb-0">Subscriptions </p>
-                     <span class="fs-5">10</span>
-                     <span class="fs-12 text-success ms-1"><i
-                        class="ti ti-trending-up mx-1"></i>0.5%</span>
+                     <p class="mb-0">PAITENTS </p>
+                     <span class="fs-5">{{$patientAdmin->count()}}</span>
                   </div>
                   <div class="min-w-fit-content">
                      <span class="avatar avatar-md br-5 bg-info-transparent">
@@ -86,39 +80,42 @@
             </div>
          </div>
       </div>
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-         <div class="card">
-            <div class="card-body">
-               <div class="d-flex align-items-center mb-3 flex-wrap gap-1">
-                  <span
-                     class="avatar avatar-md stat-avatar rounded-circle text-bg-warning fs-18 min-w-fit-content me-2">
-                  <i class="bi bi-bag-check"></i>
-                  </span>
-                  <p class="mb-0 flex-grow-1">Total Sales by Unit
-                  </p>
-               </div>
-               <span class="fs-5">$12,897</span>
-               <span class="fs-12 text-warning ms-1"><i
-                  class="ti ti-trending-up mx-1"></i>3.5%</span>
-               <div class="fw-normal d-flex align-items-center mb-2 mt-4">
-                  <p class="mb-0 flex-grow-1">Active Sales</p>
-                  <span>3,274</span>
-               </div>
-               <div class="progress custom-progress-1" style="height: 5px;">
-                  <div class="progress-bar bg-warning" role="progressbar"
-                     style="width: 50%;" aria-valuenow="25" aria-valuemin="0"
-                     aria-valuemax="100"></div>
-               </div>
-            </div>
-            <div class="card-footer p-0 text-center">
-               <div class="d-grid">
-                  <a href="javascript:void(0);"
-                     class="px-3 py-2 text-warning">View Details <i
-                     class="ti ti-external-link"></i></a>
-               </div>
-            </div>
-         </div>
-      </div>
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xxl-6">
+        <div class="card">
+           <div class="card-body">
+              <div class="d-flex align-items-start">
+                 <div class="flex-grow-1">
+                    <p class="mb-0">TOTAL RDV </p>
+                    <span class="fs-5">{{$rdvAdmin->count()}}</span>
+                 </div>
+                 <div class="min-w-fit-content ms-3">
+                    <span
+                       class="avatar avatar-md br-5 bg-primary-transparent text-primary">
+                    <i class="mdi mdi-alarm-check fs-18"></i>
+                    </span>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xxl-6">
+        <div class="card">
+           <div class="card-body">
+              <div class="d-flex align-items-start">
+                 <div class="flex-grow-1">
+                    <p class="mb-0">TEMOIGNANGE PATIENT </p>
+                    <span class="fs-5">{{$temoignageAdmin->count()}}</span>
+                 </div>
+                 <div class="min-w-fit-content ms-3">
+                    <span
+                       class="avatar avatar-md br-5 bg-primary-transparent text-primary">
+                    <i class="icon icon-bubbles fs-18"></i>
+                    </span>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
          <div class="card overflow-hidden">
             <div class="card-body p-0">
@@ -128,16 +125,84 @@
                         class="avatar avatar-md stat-avatar rounded-circle text-bg-primary fs-18 min-w-fit-content me-2">
                      <i class="bi bi-bar-chart"></i>
                      </span>
-                     <p class="mb-0 flex-grow-1">Total Revenue</p>
+                     <p class="mb-0 flex-grow-1">SERVICE</p>
                   </div>
-                  <span class="fs-5">$8,889</span>
-                  <span class="fs-12 text-success ms-1"><i
-                     class="ti ti-trending-up mx-1"></i>5.5%</span>
+                  <span class="fs-5">{{$serviceAdmin->count()}}</span>
                </div>
                <div id="totalRevenue"></div>
             </div>
          </div>
       </div>
+      <div class="col-sm-6 col-xxl-2 col-xl-6">
+        <div class="card bg-primary img-card box-primary-shadow">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="tx-fixed-white">
+                        <h2 class="mb-0 number-font">{{$ordonnceAdmin->count()}}</h2>
+                        <p class="mb-0">TOTAL MEDICAMENT PRESCITS</p>
+                    </div>
+                    <div class="ms-auto tx-fixed-white"> <i class="fa fa-user-o fs-30 me-2 mt-2"></i> </div>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-secondary img-card box-secondary-shadow">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="tx-fixed-white">
+                        <h2 class="mb-0 number-font">{{$consultationAdmin->count()}}</h2>
+                        <p class="mb-0">TOTAL CONSULTATION</p>
+                    </div>
+                    <div class="ms-auto tx-fixed-white"> <i class="wi wi-earthquake fs-30 ms-2 mt-2"></i> </div>
+                </div>
+            </div>
+        </div>
+        <div class="card  bg-success img-card box-success-shadow">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="tx-fixed-white">
+                        <h2 class="mb-0 number-font">{{$personnelcountAdmin->count()}}</h2>
+                        <p class=" mb-0">Total Personnels</p>
+                    </div>
+                    <div class="ms-auto tx-fixed-white"> <i class="fa fa-user-o fs-30 me-2 mt-2"></i> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xxl-2 col-xl-6">
+        <div class="row">
+           <div class="col-lg-6">
+              <div class="card">
+                 <div class="card-body">
+                    <div class="d-flex align-items-center mb-3 flex-wrap">
+                       <span class="avatar avatar-md stat-avatar rounded-circle text-bg-warning fs-18 min-w-fit-content me-2">
+                       <i class="fa fa-group"></i>
+                       </span>
+                       <p class="mb-0 flex-grow-1 text-gray-600">Total Medecin</p>
+                       <span class="fs-5"></span>
+                    </div>
+                    <span class="fs-5"><img src="{{asset('logo/maldoctor2.svg')}}" alt="Total Medecin"></span>
+                 </div>
+              </div>
+           </div>
+           <div class="col-lg-6">
+              <div class="card">
+                 <div class="card-body p-0">
+                    <div class="px-3 pt-3">
+                       <div class="d-flex align-items-center mb-3">
+                          <span class="avatar avatar-md stat-avatar rounded-circle text-bg-primary fs-18 min-w-fit-content me-2">
+                          <i class="bi bi-bar-chart"></i>
+                          </span>
+                          <p class="mb-0 flex-grow-1">Total d'interaction</p>
+                       </div>
+                       <span class="text-muted fs-12"><span class="text-secondary"><i class="fe fe-arrow-up-circle  text-secondary"></i> 10%</span>
+                          Dernière Semaine</span>
+                    </div>
+                    <div id="totalRevenue2"></div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
    </div>
    <!-- End::Row-1 -->
    <!-- header modal  error  -->
