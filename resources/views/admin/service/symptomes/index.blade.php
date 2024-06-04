@@ -7,6 +7,7 @@
             <span class="heading-five text-uppercase card-title">Liste des Symptômes</span>
         </div>
         <div class="card-body">
+<<<<<<< HEAD
             @if(Session::has('success'))
             <div class="alert alert-success " style="height: 50px;margin-bottom:15px">
               {{Session::get('success')}}
@@ -17,6 +18,9 @@
             </div>
             @endif
 
+=======
+          
+>>>>>>> 562b8a8c75b407bfd7872b5e221ede4198e4ba77
 
             <!-- table start -->
             <table class="table table-bordered" id="symptomsTable">
