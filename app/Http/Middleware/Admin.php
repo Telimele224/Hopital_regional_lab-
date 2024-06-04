@@ -23,4 +23,4 @@ class Admin
 
         return redirect('/');
     }
-}
+} 

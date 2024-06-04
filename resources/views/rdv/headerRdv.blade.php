@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@
 
 
    
-<div class="contenair">
+<div class="container">
     @yield('contenu')
 </div>
 
@@ -72,13 +72,6 @@
             setTimeout(() => alert.remove(), 500); // Attendre que la transition se termine
         }
     }, 10000); // 20 secondes
-</script>
-
-<script>
-    // Si un message de session flash avec un délai est présent, masquez-le après quelques secondes
-    setTimeout(function() {
-        document.getElementById('successMessage').style.display = 'none';
-    }, {{ Session::get('message_timeout', 0) }}5000); // Le délai est en millisecondes, donc multipliez par 1000 pour le convertir en secondes
 </script>
 
 </body>

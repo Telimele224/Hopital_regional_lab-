@@ -19,8 +19,7 @@ class Medecin extends Model
 
     public function horaires()
     {
-           return $this->hasMany(Horaires::class, 'id_medecin');
-        
+        return $this->hasOne(Horaires::class, 'id_medecin');
     }
 
     public function rdvs() {

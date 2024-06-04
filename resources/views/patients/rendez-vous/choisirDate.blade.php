@@ -1,10 +1,10 @@
 <!-- choisir_date.blade.php -->
-@extends('en_tete.entete_patient')
+@extends('rdv.headerRdv')
 
 @section('contenu')
-<div class="card " style="margin-top:20px ;margin-left:10px; width:95%">
+<div class="card " style="margin-top:20px ;margin-left:10%; width:80%">
     <div class="card " style="margin-top:20px ;margin-left:10%; width:80%">
-    {{-- @if(Session::has('success'))
+    @if(Session::has('success'))
     <div id="successMessage" class="alert alert-success" style="height: 50px; margin-bottom: 15px">
         {{ Session::get('success') }}
     </div>
@@ -12,7 +12,7 @@
     <div id="errorMessage" class="alert alert-danger " style="height: 50px;margin-bottom:15px">
         {{Session::get('error') }}
     </div>
-    @endif --}}
+    @endif
             <div class=" row card-header mb-4 p-3">
 
                 <div class="col-md-6 text-center">
@@ -36,23 +36,23 @@
                             Sélection de date de RDV
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('ajouterRendezVous_patient') }}" method="POST">
+                            <form action="{{ route('ajouterRendezVous') }}" method="POST">
                                 @csrf
                                 <div class="row">
-                                    <div class="mb-3 col-sm-7">
+                                    <div class="mb-3 col-sm-6">
                                         <label for="dateRdv" class="form-label">Sélectionnez une date</label>
-                                        <input type="date" class="form-control rounded-3" id="dateRdv" name="dateRdv" onchange="updateDay()">
+                                        <input type="date" class="form-control" id="dateRdv" name="dateRdv" onchange="updateDay()">
                                         @error('dateRdv')<span class="badge badge-primary bg-primary">{{ $message }}</span>@enderror
                                     </div>
-                                    <div class="mb-3 col-sm-5">
+                                    <div class="mb-3 col-sm-6">
                                         <label for="heure" class="form-label">Sélectionnez une heure</label>
-                                        <input type="time" class="form-control rounded-3 small text-center"  id="heure" name="heure">
+                                        <input type="time" class="form-control" id="heure" name="heure">
                                         @error('heure')<span class="badge badge-primary bg-primary">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="jour" class="form-label">Jour</label>
-                                    <input type="text" class="form-control rounded-3 text-center text-uppercase" id="jour" name="jour" readonly>
+                                    <input type="text" class="form-control" id="jour" name="jour" readonly>
                                     @error('jour')<span class="badge badge-primary bg-primary">{{ $message }}</span>@enderror
                                 </div>
 
@@ -91,15 +91,15 @@
                                     @if ($key < 6) <!-- Limite à 6 suggestions -->
                                     <div class="col-md-4">
                                         <!-- Formulaire caché -->
-                                        <form action="{{ route('choisirHeure_patient') }}" id="hiddenForm_{{ $loop->index }}" method="POST">
+                                        <form action="{{ route('choisirHeure') }}" id="hiddenForm_{{ $loop->index }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="medecinId" value="{{ $medecin->id }}">
                                             <input type="hidden" name="date" id="hiddenDateRdv_{{ $loop->index }}" value="{{ $horaire->format('Y-m-d') }}">
                                             <input type="hidden" name="heure" id="hiddenHeure_{{ $loop->index }}" value="{{ $horaire->format('H:i') }}">
                                             <input type="hidden" name="jour" id="hiddenJour_{{ $loop->index }}" value="{{ $horaire->format('l') }}">
-                                            <button onclick="handleSelection('{{ $horaire->format('Y-m-d') }}', '{{ $horaire->format('H:i') }}', '{{ $horaire->format('l') }}')" class="btn btn-outline-primary mb-1 w-100">
+                                            <!-- <button onclick="handleSelection('{{ $horaire->format('Y-m-d') }}', '{{ $horaire->format('H:i') }}', '{{ $horaire->format('l') }}')" class="btn btn-outline-primary mb-1 w-100">
                                                 {{ $horaire->format('H:i') }}
-                                            </button>
+                                            </button> -->
                                         </form>
                                     </div>
                                     @endif
@@ -115,8 +115,8 @@
          <div class="col-md-4">
             <!-- Card Bootstrap pour les horaires de disponibilité -->
             <div class="card">
-                <div class="card text-center ">
-                  <h4 class="text-uppercase small title,">Jours  et  Horaires de disponibilité</h4>
+                <div class="card text-center text-uppercase small">
+                  Jours  et  Horaires de disponibilité
                 </div>
                 <div class="row">
                     @if(!empty($horair->lundi_debut) && !empty($horair->lundi_fin))

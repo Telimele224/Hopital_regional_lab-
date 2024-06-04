@@ -28,20 +28,20 @@ class ProfileMedecinController extends Controller
      */
     public function edit(Request $request): View
     {
-        $medecin = $request->user()->medecin;  
+        $medecin = $request->user()->medecin;
         // Supposons que l'utilisateur connecté est un médecin et qu'il a une relation avec le modèle Medecin.
         $horaires = $medecin->horaires; // Relation entre le médecin et ses horaires
-    
+
         // Débogage pour vérifier si les horaires sont correctement récupérés
         // dd($horaires);
-    
+
         return view('medecins.profilee.edit', [
             'user' => $request->user(),
             'medecin' => $medecin,
             'horaires' => $horaires,
         ]);
     }
-    
+
 
 
     /**
@@ -92,17 +92,17 @@ class ProfileMedecinController extends Controller
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
         ]);
-    
+
         $user = $request->user();
-    
+
         // Mettre à jour le statut de l'utilisateur dans la base de données
         $user->update(['statut' => false]);
-    
+
         Auth::logout();
-    
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-    
+
         // Rediriger l'utilisateur vers une autre page si nécessaire
         return redirect()->to('/')->with('status', 'Votre compte a été désactivé.');
     }

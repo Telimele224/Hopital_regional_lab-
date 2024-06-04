@@ -62,10 +62,10 @@ public function detail_medecin($medecinId)
     $medecin = Medecin::findOrFail($medecinId);
 
     // Récupérer les horaires de disponibilité du médecin
-    $horaires = $medecin->horaires;
+    $horair = $medecin->horaires;
 
     // Retourner la vue avec les données du médecin
-    return view('rdv.show_medecin', compact('medecin', 'horaires'));
+    return view('rdv.show_medecin', compact('medecin', 'horair'));
 }
 
 
