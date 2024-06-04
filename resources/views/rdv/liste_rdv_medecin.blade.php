@@ -45,57 +45,59 @@
                                     <th class="sort-devices">Heure</th>
                                     <th class="sort-devices">Patient</th>
                                     <th class="sort-devices">Statut</th>
-                                    <th class="sort-devices text-end">Action</th>
+                                    <th class="sort-devices text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($rendezVous as $key => $rendezVous)
-                                @if ($rendezVous->patient)
-                                <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $rendezVous->jour }}</td>
-                                    <td>{{ $rendezVous->dateRdv }}</td>
-                                    <td>{{ $rendezVous->heure }}</td>
-                                    <td>{{ $rendezVous->patient->user->nom }} {{ $rendezVous->patient->user->prenom }}</td>
-                                    <td>
-                                        @if ($rendezVous->statut == 'accepté')
-                                            <span class="border border-success rounded-2 p-1">{{ $rendezVous->statut }}</span>
-                                        @elseif ($rendezVous->statut == 'en_attente')
-                                            <span class="border border-warning rounded-2 p-1">{{ $rendezVous->statut }}</span>
-                                        @elseif ($rendezVous->statut == 'annulé')
-                                            <span class="border border-danger rounded-2 p-1">{{ $rendezVous->statut }}</span>
-                                        @elseif ($rendezVous->statut == 'manqué')
-                                            <span class="border border-danger rounded-2 p-1">{{ $rendezVous->statut }}</span>
-                                        @elseif ($rendezVous->statut == 'consulté')
-                                            <span class="border border-danger rounded-2 p-1">{{ $rendezVous->statut }}</span>
-                                        @endif
-                                    </td>
-                                    <td class="d-flex align-items-center">
-                                        @if ($rendezVous->statut != 'annulé' && $rendezVous->statut != 'manqué' && $rendezVous->statut != 'consulté')
-                                            <!-- Bouton pour accepter le rendez-vous -->
-                                            <form id="accept-form-{{ $rendezVous->id }}" action="{{ route('accepter_rendez_vous', $rendezVous->id) }}" method="POST">
-                                                @csrf
+                                    @if ($rendezVous->patient)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>{{ $rendezVous->jour }}</td>
+                                            <td>{{ $rendezVous->dateRdv }}</td>
+                                            <td>{{ $rendezVous->heure }}</td>
+                                            <td>{{ $rendezVous->patient->user->nom }} {{ $rendezVous->patient->user->prenom }}</td>
+                                            <td>
                                                 @if ($rendezVous->statut == 'accepté')
-                                                    <button type="button" class="btn border border-success rounded-circle disabled accepter-btn d-center" title="Rendez-vous déjà accepté">
-                                                        <i class="fa fa-check  fs-12 p-2"></i>
-                                                    </button>
-                                                @else
-                                                    <button type="submit" class="btn btn-success rounded-circle m-2 accept-btn" title="Accepter rendez-vous" onclick="hideRejectButton({{ $rendezVous->id }})">
-                                                        <i class="fa fa-check fs-15 p-2"></i>
-                                                    </button>
+                                                    <span class="border border-success rounded-2 p-1">{{ $rendezVous->statut }}</span>
+                                                @elseif ($rendezVous->statut == 'en_attente')
+                                                    <span class="border border-warning rounded-2 p-1">{{ $rendezVous->statut }}</span>
+                                                @elseif ($rendezVous->statut == 'annulé')
+                                                    <span class="border border-danger rounded-2 p-1">{{ $rendezVous->statut }}</span>
+                                                @elseif ($rendezVous->statut == 'manqué')
+                                                    <span class="border border-danger rounded-2 p-1">{{ $rendezVous->statut }}</span>
+                                                @elseif ($rendezVous->statut == 'consulté')
+                                                    <span class="border border-danger rounded-2 p-1">{{ $rendezVous->statut }}</span>
                                                 @endif
-                                            </form>
-                                            <!-- Bouton pour rejeter le rendez-vous -->
-                                            @if ($rendezVous->statut != 'accepté' && $rendezVous->statut != 'annulé')
-                                                <button type="button" class="btn btn-danger rounded-circle m-2 reject-btn" title="Rejeter rendez-vous" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setRendezVousId({{ $rendezVous->id }})">
-                                                    <i class="fa fa-edit p-2"></i>
-                                                </button>
-                                            @endif
-                                        @endif
-                                    </td>
+                                            </td>
+                                            <td class="d-flex align-items-center">
+                                                @if($rendezVous->statut != 'annulé' && $rendezVous->statut != 'manqué' && $rendezVous->statut != 'consulté')
+                                                <form id="accept-form-{{ $rendezVous->id }}" action="{{ route('accepter_rendez_vous', $rendezVous->id) }}" method="POST">
+                                                    @csrf
+                                                    @if ($rendezVous->statut == 'accepté')
+                                                        <button type="button" class="btn btn-success rounded-circle disabled accepter-btn d-center" title="Rendez-vous déjà accepté">
+                                                           <span class="icon"><i class="fa fa-check  fs-12 p-2"></i></span>
+                                                        </button>
+                                                    @else
+                                                        <button type="submit" class="btn btn-success rounded-4  accept-btn" title="Accepter rendez-vous" onclick="hideRejectButton({{ $rendezVous->id }})">
+                                                           Accepté{{-- <span class="icon"><i class="fa fa-check fs-15 p-2"></i></span> --}}
+                                                        </button>
+                                                    @endif
+                                                    @if ($rendezVous->statut != 'accepté' && $rendezVous->statut != 'annulé')
 
-                                </tr>
-                                @endif
+                                                        <button type="button" class="btn btn-danger rounded-4  reject-btn" title="Rejeter rendez-vous" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setRendezVousId({{ $rendezVous->id }})">
+                                                        Rejetté {{-- <i class="fa fa-edit p-2"></i> --}}
+                                                        </button>
+                                                     @endif
+                                                </form>
+
+
+                                                @endif
+
+                                            </td>
+
+                                        </tr>
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>

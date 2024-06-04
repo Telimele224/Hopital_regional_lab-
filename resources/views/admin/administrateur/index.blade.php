@@ -10,22 +10,10 @@
                             <div class="input-group">
                                 <form action="{{ route('admin.administrateur.index') }}" method="GET" class="mb-3">
                                     <div class="input-group has-validation">
-                                        <button class="input-group-text" type="submit"><span class="input-group-text" id="validationTooltipUsernamePrepend"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rechercher</font></font></span></button>
-                                        <input type="search"  id="search" name="search"  class="form-control rounded-2" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required=""  autocomplete="on" value="{{ request('search') }}">
+                                        <button class="input-group-text " type="submit"><span class="input-group-text" id="validationTooltipUsernamePrepend"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rechercher</font></font></span></button>
+                                        <input type="search"  id="search" name="search"  class="form-control rounded-1 border-2" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required=""  autocomplete="on" value="{{ request('search') }}">
                                     </div>
                                 </form>
-                                <!-- Formulaire de recherche -->
-                                {{-- <form action="{{ route('admin.administrateur.index') }}" method="GET" class="mb-3">
-                                    <div class="input-group row">
-                                        <div class="col-md-10">
-                                            <input type="text" id="search" name="search" class="form-control" placeholder="Rechercher par  telephone ou nom_prenom " autocomplete="on" value="{{ request('search') }}">
-                                        </div>
-
-                                        <div class="col-md-1">
-                                            <button type="submit" class="btn btn-primary text-end"><i class="bi bi-search text-muted"></i></button>
-                                        </div>
-                                    </div>
-                                </form> --}}
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-4 col-md-4 col-sm-4">
@@ -45,6 +33,7 @@
         <div class="tab-content mb-5">
             <div class="tab-pane active show" id="tab-11" role="tabpanel">
                 <div class="card">
+
                     <div class="card-header border-bottom-0 px-5">
                         {{-- /<a href="{{ route('export') }}" class="btn btn-primary"><i class="ion ion-printer"></i> Imprimer</a> --}}
                         <h2 class="card-title"> </h2>
@@ -54,6 +43,9 @@
                     </div>
                     <div class="e-table px-5 pb-5">
                         <div class="table-responsive table-lg">
+                            <div class="card-title card-header text-uppercase p-2">
+                                <h4>La liste des Administrateurs</h4>
+                            </div>
                             <table class="table border-top table-bordered mb-0 text-nowrap">
                                 <thead>
                                     <tr>

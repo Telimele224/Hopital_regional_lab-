@@ -2,9 +2,9 @@
 @section('contenu')
 <div class="main-content">
     <div class="card">
-       
+
         <div class="card-header list-title d-between bgnc-10 br-trl-sm px-30 py-3">
-            <span class="heading-five">Liste des Maladies</span>
+            <span class="heading-five text-uppercase card-title">Liste des Maladies</span>
         </div>
         <div class="card-body">
             @if(Session::has('success'))
@@ -20,7 +20,7 @@
             <!-- table start -->
             <table class="table table-bordered" id="diseasesTable">
                 <thead>
-                    <tr>
+                    <tr class="text-uppercase">
                         <th class="text-center">ID</th>
                         <th>Nom Maladie</th>
                         <!-- Ajoutez ici d'autres colonnes si nécessaire -->

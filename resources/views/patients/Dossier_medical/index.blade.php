@@ -2,7 +2,6 @@
 
 @section('contenu')
 <div class="container">
-    <h1>Liste des Consultations et Ordonnances</h1>
     <div class="tab-pane active show" id="tab-11" role="tabpanel">
         <div class="card">
             <div class="card-header border-bottom-0 px-5">
@@ -13,6 +12,9 @@
             </div>
             <div class="e-table px-5 pb-5">
                 <div class="table-responsive table-lg">
+                    <div class="card-title  card-header text-uppercase p-2">
+                        <h4>Liste des Consultations et Ordonnances</h4>
+                    </div>
                     <table class="table border-top table-bordered mb-0 text-nowrap text-center">
                         <thead>
                             <tr>

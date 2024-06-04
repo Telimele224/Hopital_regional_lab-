@@ -55,6 +55,19 @@ class AdminController extends Controller
     public function store(AdministrateurRequest $request)
     {
 
+        // Traitement du numéro de téléphone pour gérer le préfixe du code de pays
+    $telephone = $request->input('telephone');
+
+    if (!str_starts_with($telephone, '+224') && !str_starts_with($telephone, '224') && !str_starts_with($telephone, '00224')) {
+        $telephone = '+224' . $telephone;
+    } else {
+        // Normaliser le numéro de téléphone pour qu'il commence par +224
+        if (str_starts_with($telephone, '224')) {
+            $telephone = '+224' . substr($telephone, 3);
+        } elseif (str_starts_with($telephone, '00224')) {
+            $telephone = '+224' . substr($telephone, 5);
+        }
+    }
         // dd($request->all());
         // Création de l'utilisateur
         $user = User::create([

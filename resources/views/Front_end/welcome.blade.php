@@ -88,23 +88,19 @@
    <div class="container">
       <div class="row">
         <div class="col-lg-7">
-            <div class="row">
+        <div class="row">
             @foreach ($services as $service)
-               <section >
-                     <div class="paketler wow fadeInLeft text-center" data-wow-delay="0.5s" onclick="location.href='{{route('admin.service.show',$service)}}';" style="cursor:pointer;">
-                           <div class="hizmet-kutu text-center">
-                              <div class="kutu-duzen  mt-0" style="height:180px; width: 180px ;" >
-                                 <div class="icon-box ">
-                                    <span class="border-layer"></span>
-                                    <i> <img src="{{asset('storage/'.$service->avatar)}}" height="70" width="65" class="mb-2" alt="Icon"></i>
-                                 </div>
-
-                              </div>
-                              <h3 class="text-center "><a href={{route('admin.service.show',$service)}}#">{{$service->nom}}</a></h3>
-                           </div>
-                     </div>
-               </section>
-
+                <div class="paketler wow fadeInLeft text-center" data-wow-delay="0.5s" onclick="location.href='{{route('admin.service.show',$service)}}';" style="cursor:pointer;">
+                    <div class="hizmet-kutu text-center">
+                        <div class="kutu-duzen  mt-0" style="height:180px; width: 180px ;" >
+                            <div class="icon-box ">
+                            <span class="border-layer"></span>
+                            <i> <img src="{{asset('storage/'.$service->avatar)}}" height="70" width="65" class="mb-2" alt="Icon"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-center "><a href={{route('admin.service.show',$service)}}>{{$service->nom}}</a></h3>
+                    </div>
+                </div>
             @endforeach
 
             </div>
@@ -403,19 +399,28 @@
              <div class="carousel-classes ">
                 <div class="swiper-wrapper">
                      @foreach ($actualites as $actualite)
-                     <div class="card swiper-slide wow fadeInLef " style="height: 300px" data-wow-delay="0.2s" data-tilt>
-                        <img style="width: 100%; height: 150px;"  src="{{asset('storage/'.$actualite->avatar)}}" class="attachment-custom-size size-custom-size wp-post-image img-fluid" alt="" decoding="async" fetchpriority="high"  />
-                        <div class="card-body">
-                          <h5 class="card-title"><span class="">
-                           " {{$actualite->created_at->format('d-m-Y')}} "</span></h5>
-                          <h4 class=" card-title">{{ strlen($actualite->titre) > 50 ? substr($actualite->titre, 0, 50) . '...' : $actualite->titre }}</h4>
-                          <p class="card-text small mb-3"> {{ strlen($actualite->contenu) > 150 ? substr($actualite->contenu, 0, 150) . '...' : $actualite->contenu }} [&hellip;].</p>
-                         <div class="">
-                            <a href="{{ route('admin.actualite.show', ['actualite' => $actualite->id]) }}" class="btn btn-primary b ">Lire la suite</a>
-                         </div>
-                        </div>
-                      </div>
+                     <div class="col-xl-4 col-md-6 col-sm-12">
+                        <div class="card">
+                            <img style="width: 100%; height: 150px;"  src="{{asset('storage/'.$actualite->avatar)}}" class="card-img-top" alt="img">
+                            <div class="card-body">
 
+                                <h5 class="card-title">{{ strlen($actualite->titre) > 50 ? substr($actualite->titre, 0, 50) . '...' : $actualite->titre }}</h5>
+                                <p class="card-text">{{ strlen($actualite->contenu) > 150 ? substr($actualite->contenu, 0, 150) . '...' : $actualite->contenu }} [&hellip;].</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-info"> <a href="{{ route('admin.actualite.show', ['actualite' => $actualite->id]) }}">Lire la suite ...</a></button>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5> <span class="">
+                                            " Publié le : {{$actualite->created_at->format('d-m-Y')}} "</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
                      @endforeach
                 </div>
              </div>

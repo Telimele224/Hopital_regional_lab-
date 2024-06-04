@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="d-flex align-items-start">
                     <div class="flex-grow-1">
-                        <p class="mb-0 text-gray-600">Total</p>
+                        <p class="mb-0 text-gray-600">Total Rendez-Vous</p>
                         <span class="fs-5">{{$rendezVousMedecin->count()}}</span>
                         <span class="fs-12 text-success ms-1"> <i class="fe fe-align-inset-inline-end fs-18"></i>
                     </div>
@@ -77,16 +77,16 @@
         </div>
     </div>
     <div class="col-sm-6 col-xxl-2 col-xl-6">
-        <div class="card custom-card">
+        <div class="card bg-primary custom-card">
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div class="flex-fill">
-                        <p class="mb-1 fs-5 fw-semibold text-default">{{$medecincountMedecin->count()}}</p>
-                        <p class="mb-0 text-muted">Les Medecins</p>
-                        <p class="mb-0 fs-11"><a href="{{route('medecins.monequipe.index')}}" class="text-success text-decoration-underline">Voir tous</a></p>
+                        <p class="mb-1 fs-5 fw-semibold tx-fixed-white">{{$medecincountMedecin->count()}}</p>
+                        <p class="mb-0 text-muted">Nombre Total Des Medecins</p>
+                        {{-- <p class="mb-0 fs-11"><a href="{{route('medecins.monequipe.index')}}" class="text-success text-decoration-underline">Voir tous</a></p> --}}
                     </div>
                     <div class="ms-2">
-                        <span class="avatar text-bg-info rounded-circle fs-20"><i class="bi bi-people-fill"></i></span>
+                        <span class="avatar tx-fixed-white rounded-circle fs-20"><i class="bi bi-people-fill"></i></span>
                     </div>
                 </div>
             </div>

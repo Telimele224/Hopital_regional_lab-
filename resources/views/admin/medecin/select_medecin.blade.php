@@ -17,7 +17,7 @@
 
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header bg-info">
+            <div class="card-header  text-uppercase">
                 Sélectionner un médecin
             </div>
             <div class="card-body">
@@ -38,7 +38,7 @@
 
                     <div class="form-group col-sm-3 mb-2">
                         <label for="submit">Action</label>
-                        <button class="btn btn-success form-control" name="submit">Suivant</button>
+                        <button class="btn btn-primary form-control" name="submit">Suivant</button>
                     </div>
                 </form>
             </div>

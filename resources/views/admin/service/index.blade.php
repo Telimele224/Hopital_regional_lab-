@@ -27,7 +27,7 @@
         @endif
           <div class="card ">
             <div class="table-responsive table-lg e-table px-5 pb-5">
-                    <table class="table border-top table-bordered mb-0 text-nowrap">
+                    <table class="table border-top table-bordered mb-0 text-nowrap mt-3">
                         <thead>
                             <tr class="">
                                 <th>Numero</th>

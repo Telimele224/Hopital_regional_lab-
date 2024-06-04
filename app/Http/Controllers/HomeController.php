@@ -64,7 +64,9 @@ class HomeController extends Controller
                         $personnelcountAdmin = Personnel::all();
                         // Compter le nombre de medecin
                         $medecincountMedecinAdmin = Medecin::all();
-                        $rdvAdmin = RDV::all();
+                        $rdvAdmin = Rdv::where('statut', ['accepté', 'consulté'])
+                        ->get();
+
                         $serviceAdmin = Service::all();
                         $administrateur = Administrateurs::all();
                         $temoignageAdmin = Temoignage::all();

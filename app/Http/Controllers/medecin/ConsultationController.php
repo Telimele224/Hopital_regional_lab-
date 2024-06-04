@@ -25,8 +25,8 @@ class ConsultationController extends Controller
              'consultations' => $consultations,
          ]);
      }
-     
-     
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -130,31 +130,31 @@ class ConsultationController extends Controller
     public function listedesrendezvous(Request $request)
     {
         $user = auth()->user();
-    
+
         if ($user->role === 'medecin' && $user->medecin) {
             $medecinId = $user->medecin->id;
-    
+
             $rendezVous = Rdv::where('id_medecin', $medecinId)
                 ->whereIn('statut', ['accepté', 'consulté']) // Ajout de 'consulté' dans les statuts pris en compte
                 ->with(['patient.user', 'consultations']) // Charger les consultations associées
                 ->get();
-    
+
             foreach ($rendezVous as $rdv) {
                 $rdvDateTime = Carbon::parse($rdv->dateRdv . ' ' . $rdv->heure);
-    
+
                 // Mettre à jour le statut des rendez-vous passés à "manqué"
                 if (Carbon::now()->isAfter($rdvDateTime->endOfDay()) && $rdv->statut != 'manqué' && $rdv->consultations->isEmpty()) {
                     $rdv->statut = 'manqué';
                     $rdv->save();
                 }
-    
+
                 // Mettre à jour le statut des rendez-vous à "consulté" si une consultation existe
                 if (!$rdv->consultations->isEmpty() && $rdv->statut != 'consulté') {
                     $rdv->statut = 'consulté';
                     $rdv->save();
                 }
             }
-    
+
             return view('medecins.consultation.rendezvous', [
                 'rendezVous' => $rendezVous,
                 'mesRendezVous' => Rdv::all(),
@@ -165,7 +165,7 @@ class ConsultationController extends Controller
             ]);
         }
     }
-    
+
 
 
 

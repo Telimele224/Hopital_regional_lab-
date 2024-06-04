@@ -26,7 +26,7 @@
                             <div class="input-group flatpickr" id="flatpickr-date">
                                 <input type="text" name="date" class="form-control flatpickr-input" placeholder="Select date" data-input readonly="readonly">
                                 <span class="input-group-text input-group-addon" data-toggle="">
-                                    <button type="button" id="calendar-button"><i class="fa fa-calendar" style="color: white"></i></button>
+                                    <button type="button" id="calendar-button " class="btn btn-primary"><i class="fa fa-calendar"></i></button>
                                 </span>
                             </div>
                             <input type="hidden" name="filter" id="filter-input">
@@ -41,6 +41,9 @@
             <div class="card">
                 <div class="e-table px-5 pb-5">
                     <div class="table-responsive table-lg">
+                        <div class="card-title card-header text-uppercase p-2">
+                            <h4>La liste de mes rendez-vous accepté</h4>
+                        </div>
                         <table class="table border-top table-bordered mb-0 text-nowrap">
                             <thead class="p-2">
                                 <tr>

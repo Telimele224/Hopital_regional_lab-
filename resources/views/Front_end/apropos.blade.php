@@ -2,7 +2,7 @@
 
 @section('contenu')
 
-<header class="page-header wow fadeInUp" data-wow-delay="0.5s" data-background="{{asset('Image/hero-6-bg.jpg')}}">
+<header class="page-header wow fadeInUp" data-wow-delay="0.5s" data-background="{{asset('assets/wp-content/uploads/2022/06/contact.jpg')}}">
     <div class="container">
       <h2>A propos</h2>
       <div class="bosluk3"></div>
@@ -20,15 +20,21 @@
     <div class="galeri1">
     <img class="imagerotate" src="{{asset('assets/wp-content/uploads/2022/06/medidoc-technology.png')}}" alt="" >
     </div>
-    <div class="galeri wow slideInUp" data-wow-delay="100ms" data-wow-duration="1500ms" data-tilt>
-        <img src="{{asset('assets/wp-content/uploads/2022/06/medidoc-about.png')}}" alt="Webone About" class="galeri__gorsel galeri__gorsel--3 zimage">
-    </div>
+    <div class="galeri wow slideInUp mt-5 " data-wow-delay="15ms" data-wow-duration="15ms" data-tilt >
+        <img src="{{asset('logo/techBar.png')}}"  alt="Webone About" class="galeri__gorsel galeri__gorsel--3 zimage">
+     </div>
 </div>
 <!--Galeri Görsel Alanı-->
 <div class="tablo--1-ve-3 wow fadeInUp" data-wow-delay="0.5s">
+    <h2 class="h2-baslik-anasayfa-ozel wow fadeInUp" data-wow-delay="0.6s">Qui somme nous </h2>
+    <div class="bosluk333"></div>
+    <p class="paragraf wow fadeInRight" data-wow-delay="0.6s">
+        <p>L’Hôpital Régional de Labé est un établissement de santé publique située en Moyenne Guinée (Guinée Conakry) plus précisément dans la Région administrative de Labé. Le poste de Santé de Labé fut fondé en 1906 par le colon avant d’être appelé Hôpital Régional de Labé en 1958.
+        </p>
     <h2 class="h2-baslik-anasayfa-ozel wow fadeInUp" data-wow-delay="0.6s">Haute technologie nouvelle génération</h2>
     <div class="bosluk333"></div>
     <p class="paragraf wow fadeInRight" data-wow-delay="0.6s">
+
     <p>Nous fournissons des services dans notre hôpital en avançant en toute confiance grâce à une technologie constamment renouvelée et des investissements tournés vers l’avenir. Il reçoit des rapports avec des appareils de pointe. Nous commençons le traitement en établissant le bon diagnostic avec nos médecins spécialistes.</p>
     <div class="bosluk333"></div>
     <img class="divider" width="120" height="15" title="divider" alt="divider" src="{{asset('assets/wp-content/uploads/2022/05/divider.jpg')}}">

@@ -47,6 +47,9 @@
                 </div> --}}
                 <div class="e-table px-5 pb-5">
                     <div class="table-responsive table-lg">
+                        <div class="card-title card-header text-uppercase">
+                            La liste des patients
+                        </div>
                         <table class="table border-top table-bordered mb-0 text-nowrap">
                             <thead>
                                 <tr>

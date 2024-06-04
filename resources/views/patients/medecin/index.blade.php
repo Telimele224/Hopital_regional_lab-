@@ -7,11 +7,8 @@
         <div class="card p-0">
             <div class="card-body p-4">
                 <div class="row align-items-center justify-content-around">
-                    <div class="col-xl-5 col-lg-8 col-md-8 col-sm-8">
-                        <!-- Vous pouvez ajouter des actions supplémentaires ici -->
-                    </div>
-                    <div class="col-xl-5 col-lg-4 col-md-4 col-sm-4">
-                        <!-- Formulaire de filtrage (si nécessaire) -->
+                    <div class="card-title card-header text-uppercase p-2">
+                        <h4>La liste des médecin</h4>
                     </div>
                 </div>
             </div>

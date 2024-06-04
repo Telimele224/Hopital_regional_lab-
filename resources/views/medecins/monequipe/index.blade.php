@@ -13,7 +13,12 @@
                             <div class="input-group">
                                  <!-- Formulaire de recherche -->
                             <form action="{{ route('medecins.monequipe.index') }}" method="GET" class="mb-3">
-                                <div class="input-group row">
+
+                                <div class="input-group flatpickr mt-2" id="flatpickr-date">
+                                    <input type="text" name="search" class="form-control roudede-2 flatpickr-input" placeholder="Rechercher par numéro de téléphone" data-input readonly="readonly">
+                                        <button type="submit" class="input-group-text input-group-addon btn btn-primary rounded-2" id="calendar-button" data-toggle=""><i class="fa fa-search fs-12" ></i></button>
+                                </div>
+                                {{-- <div class="input-group row">
                                     <div class="col-md-6">
                                         <input type="text" name="search" class="form-control" placeholder="Rechercher par numéro de téléphone ou code">
                                     </div>
@@ -21,7 +26,7 @@
                                         <button type="submit" class="btn btn-primary text-end"><i class="bi bi-search text-muted"></i></button>
                                     </div>
 
-                                </div>
+                                </div> --}}
                             </form>
                                 {{-- <input type="text" class="form-control mr-2" name="search" placeholder="Recherche par email" aria-describedby="button-addon2">
                                 <button class="btn border" type="button" id="button-addon2"><i class="bi bi-search text-muted"></i></button> --}}
@@ -40,17 +45,11 @@
         <div class="tab-content mb-5">
             <div class="tab-pane active show" id="tab-11" role="tabpanel">
                 <div class="card">
-                    <div class="card-header border-bottom-0 px-5">
-                        <h2 class="card-title">1 - 30  Medecins</h2>
-                        <div class="page-options ms-auto">
-                            <select class="form-control select2 w-100">
-                                <option value="asc">Dernièrè Liste</option>
-                                <option value="desc">Vielles liste</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="e-table px-5 pb-5">
                         <div class="table-responsive table-lg">
+                            <div class="card-title carf-header  text-uppercase p-2">
+                                <h4>Mon équipe</h4>
+                            </div>
                             <table class="table border-top table-bordered mb-0 text-nowrap">
                                 <thead>
                                     <tr>
@@ -70,7 +69,7 @@
                                 <tbody>
                                     @foreach ($medecins as $k=>$medecin)
                                     <tr class="user-list">
-                                        <td class="text-nowrap align-middle">1</td>
+                                        <td class="text-nowrap align-middle">{{$k +1 }}</td>
                                         <td class="text-center align-middle">
                                             <div class="d-flex align-items-center flex-wrap gap-1">
                                                 <img alt="image" class="avatar avatar-sm br-7 me-2" src="{{asset('storage/'.$medecin->user->photo)}}">
@@ -78,6 +77,7 @@
                                             </div>
                                         </td>
                                         @if($medecin->user)
+
                                             <td class="text-nowrap align-middle">{{$medecin->user->nom}}</td>
                                             <td class="text-nowrap align-middle">{{$medecin->user->prenom}}</td>
                                             <td class="text-nowrap align-middle">{{$medecin->user->genre}}</td>

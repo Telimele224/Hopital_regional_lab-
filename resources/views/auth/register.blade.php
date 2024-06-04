@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label   for="ville" :value="__('ville')" class="mb-2 fw-500">ville<span class="text-danger ms-1">*</span></label>
+                                        <label   for="ville" :value="__('ville')" class="mb-2 fw-500">Ville<span class="text-danger ms-1">*</span></label>
                                         <div class="input-group ">
                                             <span class="input-group-text" id="addon-wrapping"><i class="icon icon-location-pin"></i></span>
                                             <input type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" placeholder="Votre ville" aria-label="ville" value="{{ old('ville', $patient ? $patient->ville : '') }}" aria-describedby="addon-wrapping">
@@ -107,7 +107,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <label   for="photo" :value="__('photo')" class="mb-2 fw-500">photo<span class="text-danger ms-1">*</span></label>
+                                        <label   for="photo" :value="__('photo')" class="mb-2 fw-500">Photo</label>
                                         <div class="input-group ">
                                             <span class="input-group-text" id="addon-wrapping"><i class="icon icon-picture"></i></span>
                                             <input type="file" class="form-control  @error('photo') is-invalid @enderror" name="photo" placeholder="Votre photo" aria-label="photo" value="{{ old('photo', $patient ? $patient->photo : '') }}" aria-describedby="addon-wrapping" >

@@ -15,7 +15,7 @@
                                     <input type="search" id="search" name="search" class="form-control" id="input-search" placeholder="Recherche" value="{{ request('search') }}">
                                 </div> --}}
                                 <div class="input-group row">
-                                    <div class="col-md-7">
+                                    <div class="col-md-9">
                                         <select name="service" class="form-select">
                                             <option value="">tous les medecins</option>
                                             @foreach($services as $service)
@@ -25,7 +25,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-xl-2">
+                                    <div class="col-md-1">
                                         <button type="submit" class="btn btn-primary text-end"><i class="bi bi-search text-muted"></i></button>
                                     </div>
                                 </div>
@@ -57,6 +57,9 @@
                 </div>
                 <div class="e-table px-5 pb-5">
                     <div class="table-responsive table-lg">
+                        <div class="card-title card-header text-uppercase">
+                            <h4>La liste des médecins</h4>
+                        </div>
                         <table class="table border-top table-bordered mb-0 text-nowrap">
                             <thead>
                                 <tr>
@@ -91,7 +94,7 @@
                                         <div class="btn-list">
                                             @if($user->medecin)
                                                 {{-- <button class="btn btn-sm btn-icon btn-info-light rounded-circle" data-target="#user-form-modal" data-bs-toggle="" type="button">  <a href="{{route('admin.medecinListpdf.show',$user->medecin)}}"><i class="fa fa-file-pdf-o"></i></a> </button> --}}
-                                                <button class="btn btn-sm btn-icon btn-secondary-light rounded-circle" type="button"><a href="{{ route('admin.administrateur.edit', $user->medecin) }}"><i class="fa fa-eye-slash"></i></a></button>
+                                                <button class="btn btn-sm btn-icon btn-secondary-light rounded-circle" type="button"><a href="{{ route('admin.administrateur.edit', $user->medecin) }}"><i class="fa fa-lock"></i></a></button>
                                             @endif
                                         </div>
                                     </td>

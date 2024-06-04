@@ -13,22 +13,24 @@
     @endif
 
     <div class="bgnc-10 br-sm p-sm-30 p-10">
-        <span class="heading-five mb-sm-30 mb-3">La liste des horaires des médecins</span>
+        <div class="card-header">
+            <span class="heading-five mb-sm-30 mb-3 text-uppercase">La liste des horaires des médecins</span>
+        </div>
 
         <div class="table-responsive">
-            <table class="table table-hover table-striped table-bordered">
-                <thead class="bg-info">
-                    <tr>
-                        <th>No</th>
-                        <th>Médecin</th>
-                        <th>Lundi</th>
-                        <th>Mardi</th>
-                        <th>Mercredi</th>
-                        <th>Jeudi</th>
-                        <th>Vendredi</th>
-                        <th>Samedi</th>
-                        <th>Dimanche</th>
-                        <th>Actions</th>
+            <table class="table table-primary table-striped table-bordered">
+                <thead class="bg-primary" >
+                    <tr class="text-uppercase">
+                        <th style="color: #ffff">N°</th>
+                        <th style="color: #ffff">Médecin</th>
+                        <th style="color: #ffff" >Lundi</th>
+                        <th style="color: #ffff" >Mardi</th>
+                        <th style="color: #ffff">Mercredi</th>
+                        <th style="color: #ffff">Jeudi</th>
+                        <th style="color: #ffff">Vendredi</th>
+                        <th style="color: #ffff">Samedi</th>
+                        <th style="color: #ffff">Dimanche</th>
+                        <th style="color: #ffff">Actions</th>
                     </tr>
                 </thead>
                 <tbody>

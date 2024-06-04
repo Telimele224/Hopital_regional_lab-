@@ -17,7 +17,7 @@
             @endif
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-uppercase">
                         Ajouter un horaire pour {{ $medecin->user->nom }} {{ $medecin->user->prenom }}
 
                     </div>
@@ -38,23 +38,26 @@
                                     </div>
                                </div>
                            </div>
-
-                            <div class="form-group row mt-3">
-                                <div class="col-md-12">
-                                    <button type="button" id="buttonAjout" class="form-control btn btn-info" onclick="ajouterJour()">
-                                        +
-                                    </button>
+                           <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row mt-3">
+                                        <div class="col-md-12">
+                                            <button type="button" id="buttonAjout" class="form-control btn btn-info" onclick="ajouterJour()">
+                                                <i class="fa fa-chevron-down"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-
-                            </div>
-
-                            <div class="form-group row mt-3">
-                                <div class="col-md-12">
-                                    <button type="submit" class="form-control btn btn-primary">
-                                        {{ __('Ajouter Horaire') }}
-                                    </button>
+                                <div class="col-md-6">
+                                    <div class="form-group row mt-3">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="form-control btn btn-primary">
+                                                {{ __('Ajouter Horaire') }}
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                           </div>
                         </form>
                     </div>
                 </div>
@@ -137,7 +140,7 @@
     function updateButtonText() {
         var button = document.getElementById('buttonAjout');
         if (index < jours.length) {
-            button.textContent = '+';
+            button.textContent = '+'
         } else {
             button.textContent = '-';
         }

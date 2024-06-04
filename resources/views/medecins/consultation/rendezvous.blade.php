@@ -25,19 +25,16 @@
                         <form method="GET" action="{{ route('medecins.rendezvous.filter') }}" id="date-filter-form">
                             <div class="input-group flatpickr" id="flatpickr-date">
                                 <input type="text" name="date" class="form-control flatpickr-input" placeholder="Select date" data-input readonly="readonly">
-                                <span class="input-group-text input-group-addon" data-toggle="">
-                                    <button type="button" id="calendar-button"><i class="fa fa-calendar" style="color: white"></i></button>
-                                </span>
+                                    <button type="button" class="input-group-text input-group-addon btn btn-primary rounded-2" id="calendar-button" data-toggle=""><i class="fa fa-calendar" ></i></button>
                             </div>
                             <input type="hidden" name="filter" id="filter-input">
                         </form>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="btn input-group flatpickr" id="flatpickr-date">
-                            <label for="imprimer">Imprimer</label>
-                            <span class="input-group-text input-group-addon" data-toggle="">
-                                <button type="button" id="print-button"><i class="fa fa-printer" style="color: white"></i></button>
-                            </span>
+
+                                <button type="button"  class="btn btn-primary" id="print-button"><i class="bi bi-printer" ></i></button>
+
                         </div>
                     </div>
                 </div>

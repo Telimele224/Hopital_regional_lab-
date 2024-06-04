@@ -70,7 +70,7 @@
                         <div class="col-lg-5">
                             <label   for="age" :value="__('age')" class="mb-2 fw-500">Age<span class="text-danger ms-1">*</span></label>
                             <div class="input-group ">
-                                <span class="input-group-text" id="addon-wrapping"><i class="mdi mdi-account"></i></span>
+                                <span class="input-group-text" id="addon-wrapping"><i class="fa fa-child"></i></span>
                                 <input type="text" class="form-control  @error('age') is-invalid @enderror" placeholder="Votre age" aria-label="age" name="age" aria-describedby="addon-wrapping" value="{{ old('age', $medecin ? $medecin->user->age : '') }}"  >
                                 <div class="invalid-feedback">@error('age') {{$message}} @enderror </div>
                                 </div>
@@ -91,7 +91,7 @@
                        <div class="col-lg-5">
                             <label   for="service" :value="__('service')" class="mb-2 fw-500">Service<span class="text-danger ms-1">*</span></label>
                             <div class="input-group ">
-                                <span class="input-group-text" id="addon-wrapping"><i class="mdi mdi-account"></i></span>
+                                <span class="input-group-text" id="addon-wrapping"><i class="fa fa-cubes"></i></span>
                                 <select id="service_id" name="service_id" class="wide">
                                     @foreach ($services as $service)
                                     <option value="{{ $service->service_id }}" {{ old('service_id', $medecin ? $medecin->service_id : '') == $service->service_id ? 'selected' : '' }}>
@@ -105,7 +105,7 @@
                         <div class="col-lg-6">
                             <label   for="statut" :value="__('statut')" class="mb-2 fw-500">statut<span class="text-danger ms-1">*</span></label>
                             <div class="input-group ">
-                                <span class="input-group-text" id="addon-wrapping"><i class="mdi mdi-account"></i></span>
+                                <span class="input-group-text" id="addon-wrapping"><i class="fa fa-toggle-on"></i></span>
                                 <select id="statut" name="statut" class="wide">
                                     <option value="active "{{ old('statut', $medecin ? $medecin->statut : '') == 'active' ? 'selected' : '' }}   >Actif</option>
                                     <option value="inactive" {{ old('statut', $medecin ? $medecin->statut : '') == 'inactive' ? 'selected' : '' }}>Inactif</option>
@@ -121,7 +121,7 @@
                         <div class="col-lg-5">
                             <label   for="specialite" :value="__('specialite')" class="mb-2 fw-500">Spécialite<span class="text-danger ms-1">*</span></label>
                             <div class="input-group ">
-                                <span class="input-group-text" id="addon-wrapping"><i class="mdi mdi-account"></i></span>
+                                <span class="input-group-text" id="addon-wrapping"><i class="fa fa-graduation-cap"></i></span>
                                 <input type="text" placeholder="votre specialite" class="form-control  @error('specialite') is-invalid @enderror" name="specialite" value="{{ old('specialite', $medecin ? $medecin->specialite : '') }}" class="form-control">
                                 <div class="invalid-feedback">@error('specialite') {{$message}} @enderror </div>
                             </div>
@@ -141,7 +141,7 @@
                         <div class="form-group mb-0">
                             <label   for="biographie" :value="__('biographie')" class="mb-2 fw-500">Biographie<span class="text-danger ms-1">*</span></label>
                             <div class="input-group ">
-                                <span class="input-group-text" id="addon-wrapping"><i class="mdi mdi-account"></i></span>
+                                <span class="input-group-text" id="addon-wrapping"><i class="fa fa-align-justify"></i></span>
                                 <textarea cols="30" rows="4" class="form-control @error('biographie')is-invalid @enderror" name="biographie" placeholder="votre biographie" aria-label="biographie" aria-describedby="addon-wrapping" >{{ old('biographie',$medecin ? $medecin->biographie : '') }} </textarea>
                                 <div class="invalid-feedback">@error('biographie') {{$message}} @enderror </div>
                                 </div>

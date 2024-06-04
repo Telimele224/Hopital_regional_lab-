@@ -11,11 +11,11 @@
         </div>
         <div class="card">
             <div class="card-area">
-            <div class="card-area gap-3">
+            <div class="card-area gap-3 p-4">
                 <form  action="{{route($actualite->exists ? 'admin.actualite.update' : 'admin.actualite.store', $actualite)}}" method="post" class="vstack gap-2" enctype="multipart/form-data" class="row g-4 needs-validation" novalidate="">
                     @csrf
                     @method($actualite->exists ? 'put': 'post')
-                <div class="row">
+                <div class="row p-4">
                         <div class="col-md-6 position-relative">
                             <label   for="avatar" :value="__('Photo')" class="mb-2 fw-500">Photo de l'actualité<span class="text-danger ms-1">*</span></label>
                             <div class="input-group ">

@@ -74,6 +74,19 @@ class MedecinController extends Controller
      */
     public function store(MedecinRequest $request)
     {
+        // Traitement du numéro de téléphone pour gérer le préfixe du code de pays
+    $telephone = $request->input('telephone');
+
+    if (!str_starts_with($telephone, '+224') && !str_starts_with($telephone, '224') && !str_starts_with($telephone, '00224')) {
+        $telephone = '+224' . $telephone;
+    } else {
+        // Normaliser le numéro de téléphone pour qu'il commence par +224
+        if (str_starts_with($telephone, '224')) {
+            $telephone = '+224' . substr($telephone, 3);
+        } elseif (str_starts_with($telephone, '00224')) {
+            $telephone = '+224' . substr($telephone, 5);
+        }
+    }
 
         // dd($request->all());
         // Création de l'utilisateur
@@ -103,7 +116,7 @@ class MedecinController extends Controller
         }
 
     }
-    // Création du patient lié à l'utilisateur
+    // Création du medecin lié à l'utilisateur
     $medecin = Medecin::create([
         'specialite' => $request->input('specialite'),
         'biographie' => $request->input('biographie'),
@@ -174,10 +187,6 @@ class MedecinController extends Controller
             // Redirection avec un message de succès
             return redirect()->route('admin.medecin.index')->with('success', 'Medecin mis à jour avec succès.');
         }
-
-
-
-
 
     /**
      * Remove the specified resource from storage.

@@ -2,11 +2,14 @@
 
 @section('contenu')
 <div class="container">
-    <h3 class="text-center mb-3">Horaires du Médecin : {{ $medecin->user->nom }} {{ $medecin->user->prenom }}</h3>
+    <div class="card-title">
+    <h3 class="text-center mb-3 text-uppercase">Horaires du Médecin : {{ $medecin->user->nom }} {{ $medecin->user->prenom }}</h3>
+
+    </div>
 
     <!-- Afficher les horaires du médecin -->
     @if($medecin->horaires->count() > 0)
-        <table class="table table-hover table-striped table-bordered">
+        <table class="table table-primary table-striped table-bordered">
             <thead class="bg-info">
                 <th>Jour</th>
                 <th>Heure de début</th>
@@ -49,7 +52,7 @@
                         <td>{{ $horaire->dimanche_debut ?? '' }}</td>
                         <td>{{ $horaire->dimanche_fin ?? '' }}</td>
                     </tr>
-                   
+
                 @endforeach
             </tbody>
         </table>

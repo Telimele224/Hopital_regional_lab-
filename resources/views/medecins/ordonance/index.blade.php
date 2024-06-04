@@ -21,7 +21,7 @@
                 <form action="{{ route('medecins.ordonance.index') }}" method="GET" class="search-form">
                     <div class="input-group col-xl-5 col-lg-4 col-md-4 col-sm-4 mb-4">
                         <div class="input-group-text">
-                            <button type="submit"><i class="fa fa-search feather feather-search icon-md cursor-pointer"></i></button>
+                            <button class="btn btn-primary" type="submit"><i class="fa fa-search feather feather-search icon-md cursor-pointer fs-15"></i></button>
                         </div>
                         <input type="text" name="search" class="rounded-1 form-control" id="searchForm" placeholder="Cherche ici...| par numero de téléphone">
                     </div>
@@ -29,7 +29,7 @@
 
                 <div class="table-responsive">
                     <table class="table border-top table-bordered text-center mb-0 text-nowrap">
-                        <thead class="table-success">
+                        <thead class="table-primary">
                             <tr>
                                 <th>Numero</th>
                                 <th>Nom Patient</th>

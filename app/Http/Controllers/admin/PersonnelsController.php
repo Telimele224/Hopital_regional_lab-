@@ -5,9 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\PersonnelsRequest;
 use App\Http\Requests\admin\PersonnelsRequestUpdate;
-use App\Models\Actualite;
 use App\Models\Personnel;
-use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -44,7 +42,6 @@ class PersonnelsController extends Controller
             'personnel' => $personnel
         ]);
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -61,8 +58,6 @@ class PersonnelsController extends Controller
         }
         Personnel::create($data);
         return redirect()->route('admin.personnel.index')->with('sucess', 'Ajout effectue avec success !');
-
-
     }
 
     /**
@@ -84,7 +79,6 @@ class PersonnelsController extends Controller
             'personnel' => $personnel
         ]);
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -112,7 +106,6 @@ class PersonnelsController extends Controller
         //
         $personnel->update($data);
         return redirect()->route('admin.personnel.index')->with('sucess', 'Ajout effectue avec success !');
-
     }
 
     /**

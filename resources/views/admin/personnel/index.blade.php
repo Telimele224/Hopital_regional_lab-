@@ -45,11 +45,14 @@
                         {{-- /<a href="{{ route('export') }}" class="btn btn-primary"><i class="ion ion-printer"></i> Imprimer</a> --}}
                         <h2 class="card-title"> </h2>
                         <div class="page-options ms-auto">
-                            <a href="{{ route('admin.personnelpdf.index') }}" class="btn btn-primary"><i class="bi bi-arrow-down-circle"></i>&nbsp;&nbsp;&nbsp; Impression | Pdf | Excel</a>
+                            <a href="{{ route('admin.personnelpdf.index') }}" class="btn btn-primary"><i class="bi bi-printer"></i>&nbsp;&nbsp;&nbsp; Imprimmer</a>
                         </div>
                     </div>
                     <div class="e-table px-5 pb-5">
                         <div class="table-responsive table-lg">
+                            <div class="card-title  card-header text-uppercase">
+                                <h4>La liste des Personnels</h4>
+                            </div>
                             <table class="table border-top table-bordered mb-0 text-nowrap">
                                 <thead>
                                     <tr>

@@ -3,10 +3,10 @@
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header">
        <a href="{{route('welcome')}}" class="header-logo">
-       <img src="{{asset('logo/LogoHRL.png')}}" width="85" height="85" alt="logo" class="desktop-logo">
-       <img src="{{asset('logo/LogoHRL.png')}}" width="85" height="85" alt="logo" class="toggle-logo">
-       <img src="{{asset('logo/LogoHRL.png')}}" width="85" height="85" alt="logo" class="desktop-dark">
-       <img src="{{asset('logo/LogoHRL.png')}}" width="85" height="85" alt="logo" class="toggle-dark">
+       <img src="{{asset('logo/SIDEBARE2.png')}}" width="90%" height="50" alt="logo" class="desktop-logo">
+       <img src="{{asset('logo/SIDEBARE2.png')}}" width="90%" height="50" alt="logo" class="toggle-logo">
+       <img src="{{asset('logo/SIDEBARE2.png')}}" width="90%" height="50" alt="logo" class="desktop-dark">
+       <img src="{{asset('logo/SIDEBARE2.png')}}" width="90%" height="50" alt="logo" class="toggle-dark">
        </a>
     </div>
     <!-- End::main-sidebar-header -->
