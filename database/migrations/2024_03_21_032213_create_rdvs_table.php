@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('jour')->nullable();
             $table->text('raison_annulation')->nullable();
             $table->boolean('is_deleted')->default(false); // Ajout du champ is_deleted
-            $table->string('statut')->default('en attente');
+            // $table->string('statut')->default('en_attente');
             $table->foreign('id_patient')->references('id')->on('patients')->onUpdate('cascade');
             $table->foreign('id_medecin')->references('id')->on('medecins')->onUpdate('cascade');
             $table->timestamps();

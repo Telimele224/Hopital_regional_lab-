@@ -92,7 +92,7 @@
                                 <div class="flex-grow-1">
                                     <p>Dossier Médical</p>
                                 </div>
-                                <span class="fs-4">{{ $dossier_count }}</span>
+                                {{-- <span class="fs-4">{{ $dossier_count }}</span> --}}
                                 <span class="fs-12 op-9 ms-1 d-inline-flex align-items-center"><i class="ti ti-trending-up me-1"></i>0.5%</span>
                             </div>
                             <div class="min-w-fit-content">
@@ -140,7 +140,7 @@
                         <div class="d-flex">
                            <div class="mt-2">
                               <h6 class="">Total Ordonnance</h6>
-                              <h3 class="mb-0">{{$ordonnances_count}}</h3>
+                              {{-- <h3 class="mb-0">{{$ordonnances_count}}</h3> --}}
                            </div>
                            <div class="ms-auto">
                               <div id="total-orders"></div>

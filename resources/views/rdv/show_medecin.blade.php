@@ -12,14 +12,14 @@
         </div>
     </div>
     <div class="row" >
-        <div class="col-md-6 card" >
+        <div class="col-md-6 card align-content-center" >
             <!-- Avatar du médecin -->
-            <div class=" align-item-center rounded-circle border overflow-hidden me-2 mt-4 mb-4" style="width: 200px; height: 200px;">
-                <img src="{{ asset('avatars/' . $medecin->user->avatar) }}" alt="{{ $medecin->user->name }}" class="w-100 img-fluid border-radus-20" style="height: 500px;">
+            <div class="  p-18  overflow-hidden me-2 mt-4 mb-4" style= " height: 300px;">
+                <img src="{{ asset('storage/'. $medecin->user->photo) }}" alt="{{ $medecin->user->name }}" class="w-100 img-fluid " style="height: 500px;">
             </div>
             <!-- Autres infos du médecin -->
             <div class="card-header border border-green text-uppercase p-1"><h6>Informations personnelles </h6></div>
-            <div class="card ">
+            <div class=" p-2 card ">
 
                 <p class="mb-0"><span class="text-uppercase" style="font-weight: bolder; text: uppercase">Nom du médecin : </span>{{ $medecin->user->nom }} {{ $medecin->user->prenom }}</p>
                 <p class="mb-0"><span class="text-uppercase" style="font-weight: bolder; text: uppercase">Spécialité : </span>{{ $medecin->specialite }}</p>

@@ -15,7 +15,7 @@
             </div>
         </div>
        <div class="row">
-
+<!-- 
         {{-- @if(Session::has('success'))
         <div class="alert alert-success " style="height: 50px;margin-bottom:15px">
           {{Session::get('success')}}
@@ -24,7 +24,7 @@
         <div class="alert alert-danger " style="height: 50px;margin-bottom:15px">
           {{Session::get('error')}}
         </div>
-        @endif --}}
+        @endif --}} -->
           <div class="card ">
             <div class="table-responsive table-lg e-table px-5 pb-5">
                     <table class="table border-top table-bordered mb-0 text-nowrap mt-3">
