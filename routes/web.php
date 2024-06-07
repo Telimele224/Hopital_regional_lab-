@@ -54,8 +54,7 @@ use App\Http\Controllers\pdf\Personnelpdf;
 use App\Http\Controllers\medecin\MedecinOrdonnancepdf;
 use App\Http\Controllers\medecin\medecinPdf\MedecinPdfController;
 use App\Http\Controllers\patient\PatientOrdonnancepdf;
-
-
+use App\Http\Controllers\patient\patientpdf\patientPdf2Controller;
 use App\Http\Controllers\PDFController;
 use App\Models\Consultation;
 use App\Models\Medecin;
@@ -302,4 +301,6 @@ Route::post('/ajouterRendezVous_patient', [RdvpatientController::class, 'ajouter
 Route::get('/rdvdetail_medecin_patient/{medecinId}', [RdvpatientController::class, 'detail_medecin_patient'])->name('rdv.detail_medecin_patient');
 Route::get('/services_patient/{serviceId}/details', [RdvpatientController::class, 'detail_service_patient'])->name('detailService_patient');
 Route::get('/annuler_rendezvous_patient', [RdvpatientController::class, 'annuler_rendezvous'])->name('annulerRendezvous_patient');
+Route::get('rendezvous/{id}/recu_rdv', [RdvpatientController::class, 'showReceipt'])->name('rendezvous.recu_rdv');
+Route::get('/generate-patient-pdf', [patientPdf2Controller::class, 'generatepatientpdf'])->name('patient_rdv.generatepatientpdf');
 require __DIR__.'/auth.php';

@@ -12,13 +12,11 @@ class RendezVousAnnule extends Mailable
 
     public $patientUser;
     public $rendezVous;
-    public $raisonAnnulation;
 
-    public function __construct($patientUser, $rendezVous, $raisonAnnulation)
+    public function __construct($patientUser, $rendezVous)
     {
         $this->patientUser = $patientUser;
         $this->rendezVous = $rendezVous;
-        $this->raisonAnnulation = $raisonAnnulation;
     }
 
     public function build()
@@ -27,7 +25,7 @@ class RendezVousAnnule extends Mailable
                     ->with([
                         'patientUser' => $this->patientUser,
                         'rendezVous' => $this->rendezVous,
-                        'raisonAnnulation' => $this->raisonAnnulation,
                     ]);
     }
 }
+

@@ -9,7 +9,7 @@
     <h1>Annulation de votre Rendez-vous</h1>
     <p>Bonjour {{ $patientUser->nom }} {{ $patientUser->prenom }},</p>
     <p>Nous regrettons de vous informer que votre rendez-vous prévu le {{ $rendezVous->dateRdv }} à {{ $rendezVous->heure }} a été annulé.</p>
-    <p>Raison de l'annulation : {{ $raisonAnnulation }}</p>
+    <p>Raison de l'annulation : {{ $rendezVous->raison_annulation }}</p>
     <p>Merci de votre compréhension.</p>
     <p>Cordialement,</p>
     <p>Hopital Régional de Labé</p>

@@ -13,11 +13,11 @@
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deactivation')"
     >
-        {{ __('Suprimé le compte') }}
+        {{ __('Desactivé le compte') }}
     </button>
 
     <x-modal name="confirm-user-deactivation" :show="$errors->userDeletion->isNotEmpty()" focusable>
-        <form method="post" action="{{ route('profile.destroy') }}" class="p-6">
+        <form method="post" action="{{ route('profilepatient.destroy') }}" class="p-6">
             @csrf
             @method('DELETE')
 
@@ -38,7 +38,7 @@
                     type="password"
                     class="mt-1 block w-3/4"
                     placeholder="{{ __('Mot de passe') }}"
-                />
+                  style="background-color:#fff !important ; color:black !important"/>
 
                 <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
             </div>

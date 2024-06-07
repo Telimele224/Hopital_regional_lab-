@@ -21,7 +21,7 @@ class ServiceControllers extends Controller
     {
 
         return view('admin.service.index', [
-            'services' => Service::orderBy('created_at', 'desc')->paginate(10)
+            'services' => Service::orderBy('created_at', 'desc')->paginate(8)
         ]);
 
 
@@ -62,12 +62,12 @@ class ServiceControllers extends Controller
     public function store(ServiceRequest $request)
     {
         $data = $request->validated();
-    
+
         // Vérifie si l'un des champs (symptômes, maux ou maladies) est renseigné
         if (!$request->filled('symptoms') && !$request->filled('illnesses') && !$request->filled('diseases')) {
             return redirect()->back()->withInput()->withErrors(['error' => 'Veuillez renseigner au moins un symptôme, un mal ou une maladie.']);
         }
-    
+
         // Vérification et traitement des fichiers photo et avatar
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
@@ -76,7 +76,7 @@ class ServiceControllers extends Controller
                 $data['photo'] = $photo->storeAs('services', $new_photo, 'public');
             }
         }
-    
+
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             if ($avatar->isValid()) {
@@ -84,24 +84,24 @@ class ServiceControllers extends Controller
                 $data['avatar'] = $avatar->storeAs('services', $new_avatar, 'public');
             }
         }
-    
+
         // Création du service avec les données validées
         $service = Service::create($data);
-    
+
         // Association des symptômes, maladies et maux au service
         $symptoms = $request->input('symptoms', []);
         $illnesses = $request->input('illnesses', []);
         $diseases = $request->input('diseases', []);
-    
+
         $service->symptoms()->sync($symptoms);
         $service->illnesses()->sync($illnesses);
         $service->diseases()->sync($diseases);
-    
+
         // Redirection avec un message de succès
         return redirect()->route('admin.service.index')->with('success', 'Ajout effectué avec succès !');
     }
-    
-    
+
+
 
     /**
      * Display the specified resource.

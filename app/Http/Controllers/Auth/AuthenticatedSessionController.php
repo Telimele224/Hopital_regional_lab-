@@ -41,8 +41,8 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         $user = Auth::user();
-        
-        if ($user && $user->role === 'admin') {
+
+        if ( $user->role === 'admin' || $user->role === 'superadmin') {
             AdminLog::create([
                 'user_id' => $user->id,
                 'action' => 'Deconnecté',

@@ -1,5 +1,5 @@
 <!-- choisir_date.blade.php -->
-@extends('rdv.headerRdv')
+@extends('en_tete.entete_patient')
 
 @section('contenu')
 <div class="card " style="margin-top:20px ;margin-left:10%; width:80%">
@@ -36,7 +36,7 @@
                             Sélection de date de RDV
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('ajouterRendezVous') }}" method="POST">
+                            <form action="{{ route('ajouterRendezVous_patient') }}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3 col-sm-6">
@@ -91,15 +91,15 @@
                                     @if ($key < 6) <!-- Limite à 6 suggestions -->
                                     <div class="col-md-4">
                                         <!-- Formulaire caché -->
-                                        <form action="{{ route('choisirHeure') }}" id="hiddenForm_{{ $loop->index }}" method="POST">
+                                        <form action="{{ route('choisirHeure_patient') }}" id="hiddenForm_{{ $loop->index }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="medecinId" value="{{ $medecin->id }}">
                                             <input type="hidden" name="date" id="hiddenDateRdv_{{ $loop->index }}" value="{{ $horaire->format('Y-m-d') }}">
                                             <input type="hidden" name="heure" id="hiddenHeure_{{ $loop->index }}" value="{{ $horaire->format('H:i') }}">
                                             <input type="hidden" name="jour" id="hiddenJour_{{ $loop->index }}" value="{{ $horaire->format('l') }}">
-                                            <!-- <button onclick="handleSelection('{{ $horaire->format('Y-m-d') }}', '{{ $horaire->format('H:i') }}', '{{ $horaire->format('l') }}')" class="btn btn-outline-primary mb-1 w-100">
+                                             <button onclick="handleSelection('{{ $horaire->format('Y-m-d') }}', '{{ $horaire->format('H:i') }}', '{{ $horaire->format('l') }}')" class="btn btn-outline-primary mb-1 w-100">
                                                 {{ $horaire->format('H:i') }}
-                                            </button> -->
+                                            </button>
                                         </form>
                                     </div>
                                     @endif

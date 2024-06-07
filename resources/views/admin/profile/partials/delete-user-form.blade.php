@@ -38,7 +38,7 @@
                     type="password"
                     class="mt-1 block w-3/4"
                     placeholder="{{ __('Mot de passe') }}"
-                />
+                    style="background-color:#fff !important ; color:black !important"/>
 
                 <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
             </div>
@@ -49,7 +49,7 @@
                 </x-secondary-button>
 
                 <button type="submit" class="btn btn-danger ms-3">
-                    {{ __('Suprimer le compte') }}
+                    {{ __('Désactivé mon compte') }}
                 </button>
             </div>
         </form>

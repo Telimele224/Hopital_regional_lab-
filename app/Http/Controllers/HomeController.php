@@ -85,6 +85,32 @@ class HomeController extends Controller
                             'consultationAdmin'=>$consultationAdmin,
 
                         ]);
+                        case 'superadmin':
+                            $personnelcountAdmin = Personnel::all();
+                            // Compter le nombre de medecin
+                            $medecincountMedecinAdmin = Medecin::all();
+                            $rdvAdmin = Rdv::where('statut', ['accepté', 'consulté'])
+                            ->get();
+
+                            $serviceAdmin = Service::all();
+                            $administrateur = Administrateurs::all();
+                            $temoignageAdmin = Temoignage::all();
+                            $patientAdmin = Patient::all();
+                            $ordonnceAdmin =Ordonance::all();
+                            $consultationAdmin = Consultation::all();
+                            return view('admin.home',[
+                                'personnelcountAdmin'=>$personnelcountAdmin,
+                                'medecincountMedecinAdmin'=>$medecincountMedecinAdmin,
+                                'rdvAdmin'=>$rdvAdmin,
+                                'serviceAdmin'=>$serviceAdmin,
+                                'administrateur'=>$administrateur,
+                                'temoignageAdmin'=>$temoignageAdmin,
+                                'patientAdmin'=>$patientAdmin,
+                                'ordonnceAdmin'=>$ordonnceAdmin,
+                                'consultationAdmin'=>$consultationAdmin,
+
+                            ]);
+
 
                     case 'medecin':
                         // Recuperation de l'identifiant du medecin

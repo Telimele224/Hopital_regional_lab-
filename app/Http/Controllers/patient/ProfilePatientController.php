@@ -74,7 +74,7 @@ class ProfilePatientController extends Controller
         }
 
         $request ->user()->save();
-        return redirect()->route('profile.edit')->with('status', 'profile-updated');
+        return redirect()->route('profilepatient.edit')->with('status', 'profile-updated');
     }
 
 

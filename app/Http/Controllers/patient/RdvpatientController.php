@@ -521,6 +521,14 @@ public function filterRendezVousByDate(Request $request)
 
     return redirect()->back()->with('error', 'Accès non autorisé');
 }
+//affichez le recu du rendez vous pour impression
+public function showReceipt($id)
+    {
+        $rendezvous = Rdv::with('patient.user', 'medecin.user')->findOrFail($id);
+        $orderNumber = $rendezvous->getOrderNumber();
+
+        return view('patients.rendez-vous.patientpdf.recu_rdv', compact('rendezvous', 'orderNumber'));
+    }
 
 
 

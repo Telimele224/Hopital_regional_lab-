@@ -27,4 +27,21 @@ class Rdv extends Model
         return $this->hasMany(Consultation::class);
     }
 
+      // Méthode pour obtenir le numéro d'ordre
+      public function getOrderNumber()
+      {
+          $appointments = self::where('dateRdv', $this->dateRdv)
+                              ->where('id_medecin', $this->id_medecin)
+                              ->orderBy('heure')
+                              ->get();
+
+          foreach ($appointments as $index => $appointment) {
+              if ($appointment->id == $this->id) {
+                  return $index + 1;
+              }
+          }
+
+          return null;
+      }
+
 }

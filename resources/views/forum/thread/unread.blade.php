@@ -1,8 +1,8 @@
-@extends ('forum.master', ['thread' => null, 'breadcrumbs_append' => [trans('forum::threads.unread_updated')]])
+@extends ('forum.master', ['thread' => null, 'breadcrumbs_append' => [trans('Messages non lu ou Mise à jour')]])
 
 @section ('content')
     <div id="new-posts">
-        <h2 class="text-3xl text-medium my-4">{{ trans('forum::threads.unread_updated') }}</h2>
+        <h2 class="text-3xl text-medium my-4">{{ trans('Messages non lu ou Mise à jour') }}</h2>
 
         @if (! $threads->isEmpty())
             <div class="">

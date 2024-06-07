@@ -92,7 +92,8 @@
                                 <div class="flex-grow-1">
                                     <p>Dossier Médical</p>
                                 </div>
-                                {{-- <span class="fs-4">{{ $dossier_count }}</span> --}}
+                               <span class="fs-4">{{ isset($dossier_count) ? $dossier_count : '0' }}</span>
+                                  {{-- <span class="fs-4">0</span> --}}
                                 <span class="fs-12 op-9 ms-1 d-inline-flex align-items-center"><i class="ti ti-trending-up me-1"></i>0.5%</span>
                             </div>
                             <div class="min-w-fit-content">
@@ -107,7 +108,8 @@
                             <div class="d-fle">
                                 <div class="mt-2">
                                     <h6 class="">Total Témoignage</h6>
-                                    <h3 class="mb-0">{{ $temoignages_count }}</h3>
+                                       <h3 class="mb-0">{{ isset($temoignages_count) ? $temoignages_count : '0' }}</h3>
+
                                 </div>
                                 <div class="ms-auto">
                                     <div id="w"></div>
@@ -125,7 +127,8 @@
                            <div class="flex-grow-1">
                               <p>Statistique d'article publié</p>
                            </div>
-                           <span class="fs-4">{{$actualite_count}}</span>
+                            <span class="fs-4">{{ isset($actualite_count) ? $actualite_count : '0' }}</span>
+
                            <span class="fs-12 op-9 ms-1 d-inline-flex align-items-center"><i class="ti ti-trending-up me-1"></i>0.5%</span>
                         </div>
                         <div class="min-w-fit-content">
@@ -140,7 +143,8 @@
                         <div class="d-flex">
                            <div class="mt-2">
                               <h6 class="">Total Ordonnance</h6>
-                              {{-- <h3 class="mb-0">{{$ordonnances_count}}</h3> --}}
+                               <h3 class="mb-0">{{ isset($ordonnances_count) ? $ordonnances_count : '0' }}</h3>
+
                            </div>
                            <div class="ms-auto">
                               <div id="total-orders"></div>
@@ -163,7 +167,8 @@
                            <i class="fa fa-group"></i>
                            </span>
                            <p class="mb-0 flex-grow-1 text-gray-600">Total Medecin</p>
-                           <span class="fs-5">{{$medecin_count}}</span>
+                          <span class="fs-5">{{ isset($medecin_count) ? $medecin_count : '0' }}</span>
+
                         </div>
                         <span class="fs-5"><img src="{{asset('logo/maldoctor2.svg')}}" alt="Total Medecin"></span>
                      </div>
@@ -189,34 +194,6 @@
             </div>
          </div>
       </div>
-      {{-- <div class="col-xxl-3">
-         <div class="row">
-            <div class="col-xxl-12 col-xl-12">
-               <div class="row">
-                  <div class="col-xl-12">
-                     <div class="card bg-primary tx-fixed-white card-bg-img">
-                        <div class="card-body position-relative d-flex justify-content-between">
-                           <div>
-                              <div class="flex-grow-1">
-                                 <p class="mb-1 fs-18 fw-semibold">Statique Générale Des offres</p>
-                              </div>
-                              <p class="mb-1 fs-13 op-8">You have got 5 new offers, Track here<br> the Sales data and best deals here.</p>
-                              <span class="fs-16">3,531</span>
-                              <span class="fs-12 op-7 ms-1"><i class="ti ti-trending-up mx-1"></i>0.5%</span>
-                           </div>
-                           <div class="min-w-fit-content">
-                              <span class="avatar avatar-xxl bg-transparent">
-                              <img src="{{ asset('assets/build/assets/images/png/6.png') }}" class="op-7" alt="img">
-                              </span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- Other cards -->
-               </div>
-            </div>
-         </div>
-      </div> --}}
    </div>
    <!-- End::Row-1 -->
    <!-- header modal  error  -->

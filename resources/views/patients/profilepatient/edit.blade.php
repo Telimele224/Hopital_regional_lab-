@@ -35,7 +35,7 @@
                             <button class="nav-link active" id="timeline-tab" data-bs-toggle="pill" data-bs-target="#timeline" type="button" role="tab" aria-controls="timeline" aria-selected="false" tabindex="-1">Modifier votre Profile</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="gallery-tab" data-bs-toggle="pill" data-bs-target="#gallery" type="button" role="tab" aria-controls="gallery" aria-selected="false" tabindex="-1">Emploi du temps</button>
+                            {{-- <button class="nav-link" id="gallery-tab" data-bs-toggle="pill" data-bs-target="#gallery" type="button" role="tab" aria-controls="gallery" aria-selected="false" tabindex="-1">Emploi du temps</button> --}}
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="editprofile-tab" data-bs-toggle="pill" data-bs-target="#editprofile" type="button" role="tab" aria-controls="editprofile" aria-selected="false" tabindex="-1">Parametres</button>
@@ -54,7 +54,7 @@
                                 @include('patients.profilepatient.partials.update-profile-information-form')
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+                        {{-- <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
                             <ul id="lightgallery" class="list-unstyled row p-5">
                                 <li class="col-xs-6 col-sm-4 col-md-4 col-xl-3 mb-4 border-bottom-0">
                                     <a href="{{asset('assets/build/assets/images/media/1.jpg')}}" class="glightbox br-5" data-gallery="image">
@@ -62,7 +62,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                         <div class="tab-pane fade" id="editprofile" role="tabpanel" aria-labelledby="editprofile-tab">
                             <div class="row ">
                                 <div class="row col-xl-6 vstack gap-3">

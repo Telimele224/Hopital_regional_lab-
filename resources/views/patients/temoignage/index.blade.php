@@ -13,7 +13,7 @@
                 </div>
                     <div class="col-md-3 mt-2">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><span><a href="{{route('admin.service.create')}}" class="btn btn-primary"> <i class="fe fe-plus"></i>  Ajouter | Temoignage</a></span></li>
+                            <li class="breadcrumb-item"><span><a href="{{route('patients.temoignage.create')}}" class="btn btn-primary"> <i class="fe fe-plus"></i>  Ajouter | Temoignage</a></span></li>
                         </ol>
                     </div>
             </div>

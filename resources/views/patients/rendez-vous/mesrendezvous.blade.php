@@ -32,6 +32,15 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Alert message -->
+    <div class="col-xl-12">
+        <div class=" alert-warning text-center p-3"  role="alert">
+            !IMPORTANT: SVP, Veuillez imprimer le reçu de votre rendez-vous à travers le bouton d'impression de la liste et le présenter à l'hôpital le jour J.
+        </div>
+    </div>
+
     <div class="tab-content mb-5">
         <div class="tab-pane active show" id="tab-11" role="tabpanel">
             <div class="card">
@@ -69,6 +78,10 @@
                                                     @if($rdv->statut == 'consulté' && !$rdv->consultations->isEmpty())
                                                         <span class="avatar rounded-circle bg-blue-dark">
                                                             <a href="{{ route('patients.consultation.show', $rdv->consultations->first()->id) }}"><i class="fe fe-eye fs-15"></i></a>
+                                                        </span>
+                                                     @elseif($rdv->statut == 'accepté')
+                                                        <span class="avatar rounded-circle bg-blue-dark">
+                                                            <a href="{{ route('rendezvous.recu_rdv', $rdv->id) }}" class="text-decoration-none text-default"><i class="fa fa-print fs-15"></i></a>
                                                         </span>
                                                     @endif
                                                 </div>

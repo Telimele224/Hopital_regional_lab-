@@ -18,7 +18,7 @@
         <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-5">
             <div class="card text-center shadow-none border profile-cover__img">
                 <div class="card-body">
-                    @include('admin.profile.partials.image')
+                    @include('medecins.profilee.partials.image')
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                             <button class="nav-link active" id="timeline-tab" data-bs-toggle="pill" data-bs-target="#timeline" type="button" role="tab" aria-controls="timeline" aria-selected="false" tabindex="-1">Modifier votre Profile</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                         <button class="nav-link" id="gallery-tab" data-bs-toggle="pill" data-bs-target="#gallery" type="button" role="tab" aria-controls="gallery" aria-selected="false" tabindex="-1">Emploi du temps</button> 
+                         <button class="nav-link" id="gallery-tab" data-bs-toggle="pill" data-bs-target="#gallery" type="button" role="tab" aria-controls="gallery" aria-selected="false" tabindex="-1">Emploi du temps</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="editprofile-tab" data-bs-toggle="pill" data-bs-target="#editprofile" type="button" role="tab" aria-controls="editprofile" aria-selected="false" tabindex="-1">Paramétres</button>
@@ -46,10 +46,10 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="timeline" role="tabpanel" aria-labelledby="timeline-tab">
                             <div class="row p-5">
-                                @include('admin.profile.partials.update-profile-information-form')
+                                @include('medecins.profilee.partials.update-profile-information-form')
                             </div>
                         </div>
-                     
+
                         <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
                             <div class="row p-5">
                                 @if($horaires)
@@ -119,17 +119,17 @@
                         <div class="tab-pane fade" id="editprofile" role="tabpanel" aria-labelledby="editprofile-tab">
                             <div class="row">
                                 <div class="row col-xl-6 vstack gap-3">
-                                    @include('admin.profile.partials.update-password-form')
+                                    @include('medecins.profilee.partials.update-password-form')
                                 </div>
                                 <div class="row col-xl-6 vstack gap-3">
-                                    @include('admin.profile.partials.delete-user-form')
+                                    @include('medecins.profilee.partials.delete-user-form')
                                 </div>
                             </div>
                         </div>
                         @if(Auth::user()->role === 'medecin')
                             <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
                                 <div class="p-5">
-                                    <h5 class="text-dark">{{ $medecin->biographie }}</h5>
+                                    <h3 class="text-dark fs-15">{{ $medecin->biographie }}</h3>
                                 </div>
                             </div>
                         @endif

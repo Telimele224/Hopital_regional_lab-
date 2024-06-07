@@ -31,7 +31,7 @@
     <div class="d-flex btn-list btn-list-icon justify-content-center">
 
             <x-primary-button class="btn btn-sm btn-primary"><i class="fe fe-user-plus me-1"></i>{{ __('Mise à jour') }}</x-primary-button>
-            <a href="{{route('chatify')}}">
+            <a href="{{route('chatify')}}" target='blank'>
                 <span class="btn btn-sm btn-info"><i class="fe fe-message-square me-1"></i>Message</span>
             </a>
     </div>

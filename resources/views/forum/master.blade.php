@@ -44,8 +44,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.23.2/vuedraggable.umd.min.js"></script>
 </head>
 <body class="bg-gray-100">
-    <nav class="v-navbar bg-white shadow py-4 ">
-        <div class="container mx-auto px-4 md:flex md:items-center md:gap-4">
+    <nav class="v-navbar bg-info-200 shadow py-4">
+        <div class="container mx-auto px-4 md:flex md:items-center md:gap-0">
 
             <div class="flex justify-between items-center">
 
@@ -56,13 +56,18 @@
                 </button>
             </div>
             <div class="grow justify-between navbar-collapse" :class="{ 'flex flex-col': !isCollapsed, 'hidden md:flex': isCollapsed }">
-                <ul class="flex flex-col md:flex-row gap-3 mb-4 md:mb-0">
+
+
+                <ul class="flex flex-col md:flex-row gap-3">
+                    <li clas>
+                        <img src="{{asset('logo/HRLSIDEBAR.png')}}" width="230" height="70" alt="">
+                    </li>
                     <li>
                         {{-- <a class="text-gray-500" href="{{ url(config('forum.web.router.prefix')) }}">{{ trans('Acceuil | ') }}</a> --}}
                         <a class="text-lg" href="{{ url(config('forum.web.router.prefix')) }}">Forum de Labé</a>
                     </li>
                     <li>
-                        <a class="text-gray-500" href="{{ route('forum.recent') }}">{{ trans('Discussion récents | ') }}</a>
+                        <a class="text-gray-500"  href="{{ route('forum.recent') }}">{{ trans('Discussion récents | ') }}</a>
                     </li>
                     @auth
                         <li>
@@ -86,12 +91,12 @@
                                 </svg>
                             </a>
                             <div class="border absolute left-0 bg-white rounded-md w-44 divide-y" :class="{ hidden: isUserDropdownCollapsed }" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="block px-4 py-2" href="{{ route('welcome') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <a class="block px-4 py-2" href="{{ route('welcome') }}">
                                     Accueil
                                 </a>
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{-- <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     @csrf
-                                </form>
+                                </form> --}}
                             </div>
                         </li>
                     @else

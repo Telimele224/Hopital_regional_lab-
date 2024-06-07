@@ -1,8 +1,8 @@
-@extends ('forum.master', ['thread' => null, 'breadcrumbs_append' => [trans('forum::messages.recent')]])
+@extends ('forum.master', ['thread' => null, 'breadcrumbs_append' => [trans('Messages recent')]])
 
 @section ('content')
     <div id="new-posts">
-        <h2 class="text-3xl font-medium my-3">{{ trans('forum::messages.recent') }}</h2>
+        <h2 class="text-3xl font-medium my-3">{{ trans('Messages recent') }}</h2>
 
         @if (! $threads->isEmpty())
             <div class="my-3">

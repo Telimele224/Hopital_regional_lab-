@@ -298,7 +298,7 @@ public function ajouterRendezVous(Request $request)
     ]);
 
     // Rediriger vers la page de confirmation
-    return redirect()->route('confirmation_rdv_view_patient');
+    return redirect()->route('connexionInscription');
 }
 
 
@@ -371,15 +371,17 @@ public function confirmationRdv(Request $request)
     session()->forget('rendezVous');
 
     $rendezVous = Rdv::all();
-    $rendezVousAcceptes = Rdv::where('statut', 'accepte')->get();
-    $rendezVousRejettes = Rdv::where('statut', 'rejette')->get();
-    $rendezVousEnAttente= Rdv::where('statut', 'annuler')->get();
-    return view('patients.home',[
-        'rendezVous'=>$rendezVous,
-        'rendezVousAcceptes' => $rendezVousAcceptes,
-        'rendezVousRejettes' => $rendezVousRejettes,
-        'rendezVousEnAttente' => $rendezVousEnAttente
-    ])->with('success', 'La demande de rendez-vous a été confirmée avec succès');
+    $rendezVousAcceptes = Rdv::where('statut', 'accepté')->get();
+    $rendezVousRejettes = Rdv::where('statut', 'annulé')->get();
+    $rendezVousEnAttente= Rdv::where('statut', 'en_attente')->get();
+
+    return redirect()->route('home')->with('success', 'La demande de rendez-vous a été confirmée avec succès');
+    // return view('patients.home',[
+    //     'rendezVous'=>$rendezVous,
+    //     'rendezVousAcceptes' => $rendezVousAcceptes,
+    //     'rendezVousRejettes' => $rendezVousRejettes,
+    //     'rendezVousEnAttente' => $rendezVousEnAttente
+    // ])->with('success', 'La demande de rendez-vous a été confirmée avec succès');
 
 }
 
@@ -483,7 +485,7 @@ public function accepterRendezVous($id)
     return back()->with('success', 'Le rendez-vous a été accepté avec succès.');
 }
 
-public function annulerRendezVous(Request $request,$id)
+public function annulerRendezVous(Request $request, $id)
 {
     // Trouver le rendez-vous à annuler
     $rendezVous = Rdv::findOrFail($id);
@@ -492,19 +494,20 @@ public function annulerRendezVous(Request $request,$id)
     $raisonAnnulation = $request->input('raison_annulation');
 
     // Annuler le rendez-vous en mettant à jour son statut
-    $rendezVous->statut = 'Annulé';
+    $rendezVous->statut = 'annulé';
     $rendezVous->is_deleted = true; // Marquer comme supprimé
     $rendezVous->raison_annulation = $raisonAnnulation;
+    // dd($raisonAnnulation);
     $rendezVous->save();
 
     // Envoyer un e-mail d'annulation au patient
     $patientUser = $rendezVous->patient->user;
-    $raisonAnnulation = request()->input('raison_annulation');
-    Mail::to($patientUser->email)->send(new RendezVousAnnule($patientUser,$rendezVous, $raisonAnnulation));
+    Mail::to($patientUser->email)->send(new RendezVousAnnule($patientUser, $rendezVous));
 
     // Rediriger vers une autre page avec un message de succès
     return back()->with('success', 'Le rendez-vous a été annulé avec succès.');
 }
+
 
     //   mes rendez-vous
     public function mesRendezVous() {

@@ -1,8 +1,8 @@
-@extends ('forum.master', ['category' => null, 'thread' => null, 'breadcrumbs_append' => [trans('forum::general.manage')]])
+@extends ('forum.master', ['category' => null, 'thread' => null, 'breadcrumbs_append' => [trans('Gestion')]])
 
 @section ('content')
     <div class="flex flex-row justify-between mb-2">
-        <h2 class="text-3xl font-medium my-3">{{ trans('forum::general.manage') }}</h2>
+        <h2 class="text-3xl font-medium my-3">{{ trans('Gestion') }}</h2>
 
         @can ('createCategories')
             <x-forum.button type="button" data-open-modal="create-category">
@@ -24,7 +24,7 @@
 
         <div class="flex justify-end py-3">
             <button type="button" class="bg-blue-500 text-white rounded py-2 px-8 hover:cursor-pointer disabled:opacity-50" :disabled="isSavingDisabled" @click="onSave">
-                {{ trans('forum::general.save') }}
+                {{ trans('Enregistrer') }}
             </button>
         </div>
     </div>

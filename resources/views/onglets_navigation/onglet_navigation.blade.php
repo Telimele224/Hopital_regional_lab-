@@ -44,6 +44,7 @@
              <!-- End::slide__category -->
 
                    <!-- Start::slide  Patient-->
+                   @if(Auth::user()->role === 'superadmin')
                    <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
                        <span class="side-menu__label"><i class="fa fa-user-circle-o"></i>  ADMINISTRATEURS</span>
@@ -63,8 +64,9 @@
                         <a href="{{route('admin.historique.index')}}" class="side-menu__item"> <span><i class="fa fa-list-ol"></i> historique de connexion</span></a>
                      </li>
                      </ul>
-                 </li> 
+                 </li>
                      <!-- Start::slide  fin-->
+                @endif
 
              <!-- Start::slide  Medecins-->
              <li class="slide has-sub">
