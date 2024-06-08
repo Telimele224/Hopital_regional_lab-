@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\patient;
 
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Medecin;
@@ -523,17 +524,23 @@ public function filterRendezVousByDate(Request $request)
 }
 //affichez le recu du rendez vous pour impression
 public function showReceipt($id)
-    {
-        $rendezvous = Rdv::with('patient.user', 'medecin.user')->findOrFail($id);
-        $orderNumber = $rendezvous->getOrderNumber();
+{
+    $rendezvous = Rdv::with('patient.user', 'medecin.user')->findOrFail($id);
+    $orderNumber = $rendezvous->getOrderNumber();
 
-        return view('patients.rendez-vous.patientpdf.recu_rdv', compact('rendezvous', 'orderNumber'));
-    }
+    // Formatage des informations pour le QR code
+    $qrData = "Patient: {$rendezvous->patient->user->prenom} {$rendezvous->patient->user->nom}\n";
+    $qrData .= "Médecin: {$rendezvous->medecin->user->prenom} {$rendezvous->medecin->user->nom}\n";
+    $qrData .= "Jour du rendez-vous: " . Carbon::parse($rendezvous->dateRdv)->translatedFormat('l') . "\n";
+    $qrData .= "Date du rendez-vous: " . Carbon::parse($rendezvous->dateRdv)->format('d/m/Y') . "\n";
+    $qrData .= "Heure du rendez-vous: " . Carbon::parse($rendezvous->heure)->format('H:i') . "\n";
+    $qrData .= "Numéro d'ordre: {$orderNumber}";
 
+    // Générer le QR code
+    $qrCode = QrCode::size(200)->generate($qrData);
 
-
-
-
+    return view('patients.rendez-vous.patientpdf.recu_rdv', compact('rendezvous', 'orderNumber', 'qrCode'));
+}
 
 
     /**

@@ -195,6 +195,15 @@ public function choisirHeure(Request $request)
     $date = $request->input('date');
     $jour = Carbon::parse($date)->locale('fr')->isoFormat('dddd');
 
+    // Compter le nombre de rendez-vous pour cette date
+    $nombreRdv = Rdv::where('id_medecin', $request->input('medecinId'))
+                           ->whereDate('dateRdv', $date)
+                           ->count();
+
+    if ($nombreRdv >= 10) {
+        return redirect()->back()->with('error', 'Le nombre maximal de rendez-vous pour cette date est atteint. Veuillez choisir un autre jour.');
+    }
+
     // Mettre les données en session
     session()->put('rendezVous', [
         'medecinId' => $request->input('medecinId'),
@@ -203,7 +212,7 @@ public function choisirHeure(Request $request)
         'jour' => $jour,
     ]);
 
-    session()->put('medecinId', $request->input('medecinId'));
+    session()->put('medecinId', $request->input('medecinId')); 
 
     // Rediriger vers la vue de confirmation
     return redirect()->route('connexionInscription');
@@ -271,6 +280,15 @@ public function ajouterRendezVous(Request $request)
     }
 
     // Vérifier que l'heure est supérieure à l'heure actuelle
+
+    // Compter le nombre de rendez-vous pour cette date
+    $nombreRdv = Rdv::where('id_medecin', $medecinId)
+                           ->whereDate('dateRdv', $dateRdv)
+                           ->count();
+
+    if ($nombreRdv >= 10) {
+        return redirect()->back()->with('error', 'Le nombre maximal de rendez-vous pour cette date est atteint. Veuillez choisir un autre jour.');
+    }
     // ...
 
     // Construire le nom des colonnes pour l'heure de début et de fin en fonction du jour de la semaine

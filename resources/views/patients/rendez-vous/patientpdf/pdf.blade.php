@@ -95,6 +95,17 @@ use Carbon\Carbon;
                             </div>
                         </div>
                         <!--Booking Information end here -->
+                          <!--QR Code Start here -->
+                       <!-- QR Code Start here -->
+                        <div class="invoice-owner-conte-wrap" style="text-align: center; margin-top: 20px;">
+                            <div class="invoice-to-content">
+                                <p class="invo-to inter-700 medium-font mtb-2">Vérification de la sécurité:</p>
+                                <div>
+                                    <img src="data:image/png;base64, {!! base64_encode($qrCode) !!}" alt="QR Code">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
                 <!--Invoice content end here -->

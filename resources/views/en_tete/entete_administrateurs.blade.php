@@ -43,8 +43,6 @@
        <link rel="stylesheet" href="{{asset('assets/build/assets/app-e29e56ca.css')}}" />
        <link rel="stylesheet" href="{{asset('assets/select2.css')}}">
        <link rel="stylesheet" href="{{asset('assets/select2.min.css')}}">
-
-
        <!-- Scripts -->
        @vite(['resources/css/app.css', 'resources/js/app.js'])
    </head>
@@ -142,6 +140,7 @@
      <!-- END SCRIPTS -->
 
      <script>
+        //new TomSelect('select[multiple]',{plugins: {remove_button: {title: 'supprimer'}}});
       // Faire disparaître les alertes après 20 secondes
       setTimeout(function() {
           let alert = document.querySelector('.alert');
@@ -152,6 +151,7 @@
           }
       }, 10000); // 20 secondes
   </script>
+
    </body>
    <!-- Mirrored from laravelui.spruko.com/vexel/index by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2023 01:01:17 GMT -->
 </html>

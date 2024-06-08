@@ -29,21 +29,21 @@ class ServiceControllers extends Controller
     public function create()
 {
     $service = new Service();
-    $symptoms = Symptom::all();
-    $illnesses = Illness::all();
-    $diseases = Disease::all();
-    $serviceSymptoms = [];
-    $serviceIllnesses = [];
-    $serviceDiseases = [];
+    // $symptoms = Symptom::pluck('nom','id');
+    // $illnesses = Illness::all();
+    // $diseases = Disease::all();
+    // $serviceSymptoms = [];
+    // $serviceIllnesses = [];
+    // $serviceDiseases = [];
 
     return view("admin.service.form", [
         'service' => $service,
-        'symptoms' => $symptoms,
-        'illnesses' => $illnesses,
-        'diseases' => $diseases,
-        'serviceSymptoms' => $serviceSymptoms,
-        'serviceIllnesses' => $serviceIllnesses,
-        'serviceDiseases' => $serviceDiseases
+        'symptoms' =>  Symptom::pluck('nom','id'),
+        'illnesses' => Illness::pluck('nom','id'),
+        'diseases' => Disease::pluck('nom','id'),
+        // 'serviceSymptoms' => $serviceSymptoms,
+        // 'serviceIllnesses' => $serviceIllnesses,
+        // 'serviceDiseases' => $serviceDiseases
     ]);
 }
 
@@ -123,16 +123,22 @@ class ServiceControllers extends Controller
     public function edit($id)
 {
     $service = Service::findOrFail($id);
-    $symptoms = Symptom::all();
-    $illnesses = Illness::all();
-    $diseases = Disease::all();
+    // $symptoms = Symptom::pluck('nom','id');
+    // $illnesses = Illness::all();
+    // $diseases = Disease::all();
 
     // Récupérer les symptômes, maux et maladies liés au service
-    $serviceSymptoms = $service->symptoms->pluck('id')->toArray();
-    $serviceIllnesses = $service->illnesses->pluck('id')->toArray();
-    $serviceDiseases = $service->diseases->pluck('id')->toArray();
+    // $serviceSymptoms = $service->symptoms->pluck('id')->toArray();
+    // $serviceIllnesses = $service->illnesses->pluck('id')->toArray();
+    // $serviceDiseases = $service->diseases->pluck('id')->toArray();
+    
 
-    return view("admin.service.form", compact("service", "symptoms", "illnesses", "diseases", "serviceSymptoms", "serviceIllnesses", "serviceDiseases"));
+    return view("admin.service.form",[
+        'service'=>$service,
+        'symptoms' =>  Symptom::pluck('nom','id'),
+        'illnesses' => Illness::pluck('nom','id'),
+        'diseases' => Disease::pluck('nom','id'),
+    ]);
 }
 
 

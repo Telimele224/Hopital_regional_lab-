@@ -52,7 +52,7 @@ $lastMessageBody = strlen($lastMessageBody) > 30 ? mb_substr($lastMessageBody, 0
                 $lastMessageBody
             !!}
             @else
-            <span class="fas fa-file"></span> Attachement
+            <span class="fas fa-file"></span> photo
             @endif
         </span>
         {{-- New messages counter --}}

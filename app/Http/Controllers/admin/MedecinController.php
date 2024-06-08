@@ -66,6 +66,7 @@ class MedecinController extends Controller
             'method' => 'post',
             'medecin' => $medecin,
             'services' => $services,
+            'symt'
         ]);
     }
 

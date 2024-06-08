@@ -100,15 +100,15 @@ use Carbon\Carbon;
                         </div>
                         <div class="invo-hotel-book-wrap">
                             <div class="booking-content-wrap">
-                               
+
                                 <div class="invo-book-detail detail-col">
                                     <span class="invo-hotel-title nights inter-700 b-text">Service :</span><br>
                                     <span class="invo-hotel-desc second-color">{{ $rendezvous->medecin->service->nom }}</span>
                                 </div>
-								<div class="invo-book-detail detail-col">
-									<span class="invo-hotel-title nights inter-700 b-text">Jour :</span><br>
-									<span class="invo-hotel-desc second-color">{{ Carbon::parse($rendezvous->dateRdv)->translatedFormat('l') }}</span>
-								</div>
+                                <div class="invo-book-detail detail-col">
+                                    <span class="invo-hotel-title nights inter-700 b-text">Jour :</span><br>
+                                    <span class="invo-hotel-desc second-color">{{ Carbon::parse($rendezvous->dateRdv)->translatedFormat('l') }}</span>
+                                </div>
                                 <div class="invo-book-detail detail-col">
                                     <span class="invo-hotel-title nights inter-700 b-text">Date :</span><br>
                                     <span class="invo-hotel-desc second-color">{{ Carbon::parse($rendezvous->dateRdv)->format('d/m/Y') }}</span>
@@ -124,6 +124,17 @@ use Carbon\Carbon;
                             </div>
                         </div>
                         <!--Rendez-vous details end here -->
+
+                        <!--QR Code Start here -->
+                        <div class="invoice-owner-conte-wrap" style="text-align: center; margin-top: 20px;">
+                            <div class="invoice-to-content">
+                                <p class="invo-to inter-700 medium-font mtb-2">Vérification de la sécurité:</p>
+                                <div>
+                                    {!! $qrCode !!}
+                                </div>
+                            </div>
+                        </div>
+                        <!--QR Code End here -->
 
                     </div>
                 </section>
