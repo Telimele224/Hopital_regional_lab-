@@ -22,7 +22,7 @@
         <div class="container">
             {{ __('Votre compte a été désactivé. Si vous avez des questions ou besoin d\'aide, veuillez contacter l\'administrateur du site pour plus d\'informations.') }}
         </div>
-        
+
 
     </div>
 
@@ -33,21 +33,13 @@
     @endif
 
     <div class="mt-4 flex items-center justify-between centrer-horizontalement">
-        <form method="POST" action="{{ route('verification.send') }}">
-            @csrf
 
-            <div>
-                <button class="btn btn-primary">
-                    {{ __('Renvoyer l\'e-mail de vérification') }}
-                </button>
-            </div>
-        </form>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
 
             <button type="submit" class="btn btn-secondary">
-                {{ __('Se déconnecter') }}
+                {{ __('Retour à l\'accueil') }}
             </button>
         </form>
     </div>

@@ -94,7 +94,7 @@
                                         <div class="btn-list">
                                             @if($user->medecin)
                                                 {{-- <button class="btn btn-sm btn-icon btn-info-light rounded-circle" data-target="#user-form-modal" data-bs-toggle="" type="button">  <a href="{{route('admin.medecinListpdf.show',$user->medecin)}}"><i class="fa fa-file-pdf-o"></i></a> </button> --}}
-                                                <button class="btn btn-sm btn-icon btn-secondary-light rounded-circle" type="button"><a href="{{ route('admin.administrateur.edit', $user->medecin) }}"><i class="fa fa-lock"></i></a></button>
+                                                <button class="btn btn-sm btn-icon btn-secondary-light rounded-circle" type="button"><a href="{{ route('admin.medecin.edit', $user->medecin) }}"><i class="fa fa-lock"></i></a></button>
                                             @endif
                                         </div>
                                     </td>

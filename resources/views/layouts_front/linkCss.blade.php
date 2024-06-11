@@ -11,6 +11,7 @@
     padding: 0 !important;
     }
  </style>
+  <link rel="icon" href="{{asset('logo/LogoHRL.png')}}" type="image/x-icon">
  <link rel='stylesheet' id='wp-block-library-css' href="{{asset('assets/wp-includes/css/dist/block-library/style.minaec2.css?ver=6.4.1')}}" media='all' />
  <style id='classic-theme-styles-inline-css'>
     /*! This file is auto-generated */
@@ -37,7 +38,7 @@
  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
  <meta name="generator" content="WordPress 6.4.1" />
  <link rel="canonical" href="index.html" />
- <link rel='shortlink' href='index.html' />
+ <link rel='shortlink' href='' />
  <link rel="alternate" type="application/json+oembed" href="{{ asset('assets/wp-json/oembed/1.0/embed783f.json?url=https%3A%2F%2Fgarantiwebtasarim.com%2Fwordpress%2Fmedidoc%2F')}}" />
  <link rel="alternate" type="text/xml+oembed" href="{{ asset('assets/wp-json/oembed/1.0/embed017c?url=https%3A%2F%2Fgarantiwebtasarim.com%2Fwordpress%2Fmedidoc%2F&amp;format=xml')}}" />
  <style id="wp-custom-css">
